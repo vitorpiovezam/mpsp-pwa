@@ -1,1 +1,6 @@
-<p>arisp-form works!</p>
+<form [formGroup]="form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="CNPJ" formControlName="cnpj">
+    </mat-form-field><br>
+    <button mat-button color="primary">Pesquisar</button>
+</form>

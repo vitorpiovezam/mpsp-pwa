@@ -5,7 +5,9 @@ import { Component } from '@angular/core';
   template: `
     <mat-toolbar>  
       <mat-toolbar-row>
-        <span>MPSP-PWA</span>
+        <span class="logo">MPSP</span>
+        <span><a [routerLink]="[ 'search' ]">Consultar</a></span>
+        <span><a [routerLink]="[ 'my-searches' ]">Minhas Consultas</a></span>
       </mat-toolbar-row>
     </mat-toolbar>
     <div id="content">

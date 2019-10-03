@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-arisp-form',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./arisp-form.component.scss']
 })
 export class ArispFormComponent implements OnInit {
-
+  form: FormGroup = new FormGroup({
+    cnpj: new FormControl('', Validators.required)
+  })
   constructor() { }
 
   ngOnInit() {
