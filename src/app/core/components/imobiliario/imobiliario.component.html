@@ -2,27 +2,24 @@
 
   <div class="content">
     <h4> Portais disponiveis para consulta </h4>
-    <mat-checkbox [formControl]="arisp">Arisp</mat-checkbox>
+    <mat-checkbox (click)="addOption('arisp')">Arisp</mat-checkbox><br>
+    <mat-checkbox (click)="addOption('cadesp')">Cadesp</mat-checkbox>
   </div>
 
   <div class="content">
-    <div *ngIf="arisp.value">
-      <h3> Arisp </h3>
-      <app-arisp-form></app-arisp-form>
-    </div>
-  </div>
+    <form [formArrayName]="form" *ngFor="let arrayItem of arrayItems; let i=index">
+      <input [id]="arrayItem.id" type="checkbox" [formControl]="demoArray[i]">
+      <label [for]="arrayItem.id" class="array-item-title">
+        {{arrayItem.title}}</label>
+  <button mat-button color="primary">Pesquisar</button>
+  </form>
 
-  <div class="content">
-    <h4> Pesquisas </h4>
-    
-    <div class="result">
-      <mat-progress-spinner
-        color='primary'
-        mode='indeterminate'
-        diameter="30">
-      </mat-progress-spinner>
-      <span class="title">Arisp #322131</span>
-    </div>
-    
+</div>
+
+<div class="content">
+  <h4> Pesquisas </h4>
+
+  <div class="result">
+
   </div>
 </div>`

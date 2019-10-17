@@ -1,3 +1,4 @@
+import { ArispService } from './core/services/arisp.service';
 import { ImobiliarioComponent } from './core/components/imobiliario/imobiliario.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +18,7 @@ import { ArispFormComponent } from './core/forms/arisp-form/arisp-form.component
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MySearchesComponent } from './pages/my-searches/my-searches.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +39,12 @@ import { MySearchesComponent } from './pages/my-searches/my-searches.component';
     FormsModule,
     MatInputModule,
     MatButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ArispService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

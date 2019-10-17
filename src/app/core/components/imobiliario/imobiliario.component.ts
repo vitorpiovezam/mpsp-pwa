@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormArray, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-imobiliario',
@@ -7,12 +7,25 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./imobiliario.component.scss']
 })
 export class ImobiliarioComponent implements OnInit {
-  arisp: FormControl;
+  form: FormArray;
+  options: any[];
+
+  arrayItems: {
+    id: number;
+    title: string;
+  }[] = [];
+
+  arispForm: FormGroup = new FormGroup({
+    cnpj: new FormControl('', Validators.required)
+  });
 
   constructor() { }
 
   ngOnInit() {
-    this.arisp = new FormControl(true);
+  }
+
+  addOption(name: string){
+    this.arrayItems.push({id: 3, title: 'salve'});
   }
 
 }
