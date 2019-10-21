@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "deploy": "ng build --prod --configuration=production && aws s3 --profile pessoal sync dist/mpsp-pwa s3://mpsp-pwa",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
