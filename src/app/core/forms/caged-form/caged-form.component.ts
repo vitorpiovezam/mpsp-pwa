@@ -10,6 +10,7 @@ import { CagedService } from '../../services/caged.service';
 
 export class CagedFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
+  title: string;
   form: FormGroup;
 
   constructor(
@@ -18,6 +19,7 @@ export class CagedFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.title = 'Caged';
     this.form = this.formBuilder.group({
       nome: new FormControl('', [Validators.required]),
       cep: new FormControl('')

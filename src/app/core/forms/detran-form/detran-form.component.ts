@@ -11,6 +11,7 @@ import { DetranService } from '../../services/detran.service';
 
 export class DetranFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
+  title: string;
   form: FormGroup;
 
   constructor(
@@ -19,6 +20,7 @@ export class DetranFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.title = 'Detran';
     this.form = this.formBuilder.group({
       nome: new FormControl('', [Validators.required]),
       cep: new FormControl('')

@@ -10,6 +10,7 @@ import { InfocrimService } from '../../services/infocrim.service';
 
 export class InfocrimFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
+  title: string;
   form: FormGroup;
 
   constructor(
@@ -18,6 +19,7 @@ export class InfocrimFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.title = 'Infocrim';
     this.form = this.formBuilder.group({
       nome: new FormControl('', [Validators.required]),
       cep: new FormControl('')

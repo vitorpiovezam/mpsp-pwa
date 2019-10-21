@@ -12,6 +12,7 @@ import { ArispService } from '../../services/arisp.service';
 export class ArispFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
   form: FormGroup;
+  title = 'Arisp';
 
   searchType = SearchType;
   personType = PersonType;

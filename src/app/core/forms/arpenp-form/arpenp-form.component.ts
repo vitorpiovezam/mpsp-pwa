@@ -11,6 +11,7 @@ import { ArpenpService } from '../../services/arpenp.service';
 
 export class ArpenpFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
+  title = 'Arpenp';
   form: FormGroup;
 
   constructor(

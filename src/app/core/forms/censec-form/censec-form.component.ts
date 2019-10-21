@@ -11,6 +11,7 @@ import { ICensecRequest } from './censec.model';
 
 export class CensecFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
+  title: string;
   form: FormGroup;
 
   constructor(
@@ -19,6 +20,7 @@ export class CensecFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.title = 'Censec';
     this.form = this.formBuilder.group({
       nome: new FormControl('', [Validators.required]),
       cep: new FormControl('')

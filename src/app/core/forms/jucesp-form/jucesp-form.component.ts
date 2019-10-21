@@ -11,6 +11,7 @@ import { JucespService } from '../../services/jucesp.service';
 
 export class JucespFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
+  title: string;
   form: FormGroup;
 
   constructor(
@@ -19,6 +20,7 @@ export class JucespFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.title = 'Jucesp';
     this.form = this.formBuilder.group({
       nome: new FormControl('', [Validators.required]),
       cep: new FormControl('')

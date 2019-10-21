@@ -11,6 +11,7 @@ import { CadespService } from '../../services/cadesp.service';
 
 export class CadespFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
+  title: string;
   form: FormGroup;
 
   constructor(
@@ -19,6 +20,7 @@ export class CadespFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.title ='Cadesp';
     this.form = this.formBuilder.group({
       nome: new FormControl('', [Validators.required]),
       cep: new FormControl('')

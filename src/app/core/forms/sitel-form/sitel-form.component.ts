@@ -11,6 +11,7 @@ import { SitelService } from '../../services/sitel.service';
 
 export class SitelFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
+  title: string;
   form: FormGroup;
 
   constructor(
@@ -19,6 +20,7 @@ export class SitelFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.title = 'Sitel';
     this.form = this.formBuilder.group({
       nome: new FormControl('', [Validators.required]),
       cep: new FormControl('')

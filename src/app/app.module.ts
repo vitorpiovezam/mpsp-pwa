@@ -7,7 +7,7 @@ import { CensecService } from './core/services/cansec.service';
 import { CagedService } from './core/services/caged.service';
 import { CadespService } from './core/services/cadesp.service';
 import { SivecFormComponent } from './core/forms/sivec-form/sivec-form.component';
-import { SitelFormComponent } from './core/forms/siel-form/sitel-form.component';
+import { SitelFormComponent } from './core/forms/sitel-form/sitel-form.component';
 import { JucespFormComponent } from './core/forms/jucesp-form/jucesp-form.component';
 import { InfocrimFormComponent } from './core/forms/infocrim-form/infocrim-form.component';
 import { DetranFormComponent } from './core/forms/detran-form/detran-form.component';
