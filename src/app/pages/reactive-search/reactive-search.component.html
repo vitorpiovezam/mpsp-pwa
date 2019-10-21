@@ -1,7 +1,46 @@
-<mat-tab-group>
-    <mat-tab label="Imobiliário">
-        <app-imobiliario></app-imobiliario>
-    </mat-tab>
-    <mat-tab label="Civil"><div class="container">Cooming soon ~ </div></mat-tab>
-    <mat-tab label="Juridico"><div class="container">Cooming soon ~ </div></mat-tab>
-</mat-tab-group>
+<div class="container">
+
+  <div class="content">
+    <h4> Portais disponiveis para consulta </h4>
+
+    <div class="list">
+      <mat-checkbox color="primary" (click)="disableControl(arisp, 'arisp')" [(ngModel)]="arisp">Arisp</mat-checkbox>
+      <mat-checkbox color="primary" (click)="disableControl(arpenp, 'arpenp')" [(ngModel)]="arpenp">Arpenp</mat-checkbox>
+      <mat-checkbox color="primary" (click)="disableControl(cadesp, 'cadesp')" [(ngModel)]="cadesp">Cadesp</mat-checkbox>
+      <mat-checkbox color="primary" (click)="disableControl(caged, 'caged')" [(ngModel)]="caged">Caged</mat-checkbox>
+      <mat-checkbox color="primary" (click)="disableControl(censec, 'censec')" [(ngModel)]="censec">Censec</mat-checkbox>
+      <mat-checkbox color="primary" (click)="disableControl(detran, 'detran')" [(ngModel)]="detran">Detran</mat-checkbox>
+      <mat-checkbox color="primary" (click)="disableControl(infocrim, 'infocrim')" [(ngModel)]="infocrim">Infocrim</mat-checkbox>
+      <mat-checkbox color="primary" (click)="disableControl(jucesp, 'jucesp')" [(ngModel)]="jucesp">Jucesp</mat-checkbox>
+      <mat-checkbox color="primary" (click)="disableControl(siel, 'siel')" [(ngModel)]="siel">Siel</mat-checkbox>
+      <mat-checkbox color="primary" (click)="disableControl(sivec, 'sivec')" [(ngModel)]="sivec">Sivec</mat-checkbox>
+    </div>
+ 
+    
+    <pre>
+{{ form.value | json }}
+    </pre>
+  </div>
+
+  <div class="content">
+    <div class="form-wrap">
+      <app-arisp-form *ngIf="arisp" (formReady)="addControl('arisp', $event)">></app-arisp-form>
+    </div>
+
+    <div class="form-wrap">
+      <app-arpenp-form *ngIf="arpenp" (formReady)="addControl('arpenp', $event)">></app-arpenp-form>
+    </div>
+
+
+    <div class="form-wrap">
+    </div>
+    <button (click)="search()" mat-button color="primary">Enviar</button>
+  </div>
+
+  <div class="content">
+    <h4> Pesquisas </h4>
+
+    <div class="result">
+
+    </div>
+  </div>`

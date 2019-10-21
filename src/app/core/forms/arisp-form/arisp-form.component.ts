@@ -1,6 +1,6 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { IArispRequest } from '../../definitions/arisp.model';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { IArispRequest, SearchType, PersonType, Cities } from './arisp.model';
 import { ArispService } from '../../services/arisp.service';
 
 @Component({
@@ -10,15 +10,32 @@ import { ArispService } from '../../services/arisp.service';
 })
 
 export class ArispFormComponent implements OnInit {
+  @Output() formReady = new EventEmitter<FormGroup>();
+  form: FormGroup;
 
-  arispService: ArispService;
-  form: FormGroup = new FormGroup({
-    cnpj: new FormControl('', Validators.required)
-  })
+  searchType = SearchType;
+  personType = PersonType;
+  cities: string[] = Cities;
 
-  constructor(arispService: ArispService) { }
+
+  constructor(
+    private arispService: ArispService,
+    private formBuilder: FormBuilder
+  ) {
+    
+   }
 
   ngOnInit() {
+
+    this.form = this.formBuilder.group({
+      searchType: new FormControl(),
+      personType: new FormControl(),
+      cityNames: new FormControl(),
+      cpfCnpj: new FormControl(''),
+    });
+
+    // Emit the form group to the father to do whatever it wishes
+    this.formReady.emit(this.form);
   }
 
   search(arispRequest: IArispRequest) {

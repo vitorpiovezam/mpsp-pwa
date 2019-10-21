@@ -1,5 +1,33 @@
- <form [formGroup]="form" (ngSubmit)="search(form.value)">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="CNPJ" formControlName="cnpj">
-    </mat-form-field><br>
+<h4>Arisp</h4>
+
+<form [formGroup]="form" (ngSubmit)="search(form.value)">
+  <mat-form-field>
+    <mat-label>Tipo de Pesquisa</mat-label>
+    <mat-select formControlName="searchType" name="searchType">
+      <mat-option *ngFor="let search of searchType; let i = index" [value]="i">
+        {{ search }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Tipo de Pesquisa</mat-label>
+    <mat-select formControlName="personType">
+      <mat-option *ngFor="let person of personType; let i = index" [value]="i">
+        {{ person }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Cidades</mat-label>
+    <mat-select formControlName="cityNames" multiple>
+      <mat-option *ngFor="let city of cities" [value]="city">{{ city }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="CPF/CNJP" formControlName="cpfCnpj">
+  </mat-form-field>
 </form>
