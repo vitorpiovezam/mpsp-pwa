@@ -1,3 +1,19 @@
+import { SivecService } from './core/services/sivec.service';
+import { SitelService } from './core/services/sitel.service';
+import { JucespService } from './core/services/jucesp.service';
+import { InfocrimService } from './core/services/infocrim.service';
+import { DetranService } from './core/services/detran.service';
+import { CensecService } from './core/services/cansec.service';
+import { CagedService } from './core/services/caged.service';
+import { CadespService } from './core/services/cadesp.service';
+import { SivecFormComponent } from './core/forms/sivec-form/sivec-form.component';
+import { SitelFormComponent } from './core/forms/siel-form/sitel-form.component';
+import { JucespFormComponent } from './core/forms/jucesp-form/jucesp-form.component';
+import { InfocrimFormComponent } from './core/forms/infocrim-form/infocrim-form.component';
+import { DetranFormComponent } from './core/forms/detran-form/detran-form.component';
+import { CensecFormComponent } from './core/forms/censec-form/censec-form.component';
+import { CagedFormComponent } from './core/forms/caged-form/caged-form.component';
+import { CadespFormComponent } from './core/forms/cadesp-form/cadesp-form.component';
 import { ArispService } from './core/services/arisp.service';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,10 +41,19 @@ import { MatOptionModule } from '@angular/material/core';
   declarations: [
     AppComponent,
     HomeComponent,
+    MySearchesComponent,
     ReactiveSearchComponent,
+
     ArispFormComponent,
     ArpenpFormComponent,
-    MySearchesComponent
+    CadespFormComponent,
+    CagedFormComponent,
+    CensecFormComponent,
+    DetranFormComponent,
+    InfocrimFormComponent,
+    JucespFormComponent,
+    SitelFormComponent,
+    SivecFormComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +73,15 @@ import { MatOptionModule } from '@angular/material/core';
   ],
   providers: [
     ArispService,
-    ArpenpService
+    ArpenpService,
+    CadespService,
+    CagedService,
+    CensecService,
+    DetranService,
+    InfocrimService,
+    JucespService,
+    SitelService,
+    SivecService
   ],
   bootstrap: [AppComponent]
 })

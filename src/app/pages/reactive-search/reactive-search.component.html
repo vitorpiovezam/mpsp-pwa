@@ -1,46 +1,80 @@
-<div class="container">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <h4> Portais disponiveis para consulta </h4>
 
-  <div class="content">
-    <h4> Portais disponiveis para consulta </h4>
-
-    <div class="list">
-      <mat-checkbox color="primary" (click)="disableControl(arisp, 'arisp')" [(ngModel)]="arisp">Arisp</mat-checkbox>
-      <mat-checkbox color="primary" (click)="disableControl(arpenp, 'arpenp')" [(ngModel)]="arpenp">Arpenp</mat-checkbox>
-      <mat-checkbox color="primary" (click)="disableControl(cadesp, 'cadesp')" [(ngModel)]="cadesp">Cadesp</mat-checkbox>
-      <mat-checkbox color="primary" (click)="disableControl(caged, 'caged')" [(ngModel)]="caged">Caged</mat-checkbox>
-      <mat-checkbox color="primary" (click)="disableControl(censec, 'censec')" [(ngModel)]="censec">Censec</mat-checkbox>
-      <mat-checkbox color="primary" (click)="disableControl(detran, 'detran')" [(ngModel)]="detran">Detran</mat-checkbox>
-      <mat-checkbox color="primary" (click)="disableControl(infocrim, 'infocrim')" [(ngModel)]="infocrim">Infocrim</mat-checkbox>
-      <mat-checkbox color="primary" (click)="disableControl(jucesp, 'jucesp')" [(ngModel)]="jucesp">Jucesp</mat-checkbox>
-      <mat-checkbox color="primary" (click)="disableControl(siel, 'siel')" [(ngModel)]="siel">Siel</mat-checkbox>
-      <mat-checkbox color="primary" (click)="disableControl(sivec, 'sivec')" [(ngModel)]="sivec">Sivec</mat-checkbox>
+      <div class="list">
+        <mat-checkbox color="primary" (click)="disableControl(arisp, 'arisp')" [(ngModel)]="arisp">Arisp</mat-checkbox>
+        <mat-checkbox color="primary" (click)="disableControl(arpenp, 'arpenp')" [(ngModel)]="arpenp">Arpenp</mat-checkbox>
+        <mat-checkbox color="primary" (click)="disableControl(cadesp, 'cadesp')" [(ngModel)]="cadesp">Cadesp</mat-checkbox>
+        <mat-checkbox color="primary" (click)="disableControl(caged, 'caged')" [(ngModel)]="caged">Caged</mat-checkbox>
+        <mat-checkbox color="primary" (click)="disableControl(censec, 'censec')" [(ngModel)]="censec">Censec</mat-checkbox>
+        <mat-checkbox color="primary" (click)="disableControl(detran, 'detran')" [(ngModel)]="detran">Detran</mat-checkbox>
+        <mat-checkbox color="primary" (click)="disableControl(infocrim, 'infocrim')" [(ngModel)]="infocrim">Infocrim</mat-checkbox>
+        <mat-checkbox color="primary" (click)="disableControl(jucesp, 'jucesp')" [(ngModel)]="jucesp">Jucesp</mat-checkbox>
+        <mat-checkbox color="primary" (click)="disableControl(siel, 'siel')" [(ngModel)]="siel">Siel</mat-checkbox>
+        <mat-checkbox color="primary" (click)="disableControl(sivec, 'sivec')" [(ngModel)]="sivec">Sivec</mat-checkbox>
+      </div>
+      <pre>
+    {{ form.value | json }}
+        </pre>
     </div>
- 
-    
-    <pre>
-{{ form.value | json }}
-    </pre>
+
+    <div class="col-md-4">
+      <div class="content">
+        <div class="form-wrap">
+          <app-arisp-form *ngIf="arisp" (formReady)="addControl('arisp', $event)">></app-arisp-form>
+        </div>
+
+        <div class="form-wrap">
+          <app-arpenp-form *ngIf="arpenp" (formReady)="addControl('arpenp', $event)">></app-arpenp-form>
+        </div>
+
+        <div class="form-wrap">
+          <app-cadesp-form *ngIf="cadesp" (formReady)="addControl('cadesp', $event)">></app-cadesp-form>
+        </div>
+
+        <div class="form-wrap">
+          <app-caged-form *ngIf="caged" (formReady)="addControl('caged', $event)">></app-caged-form>
+        </div>
+
+        <div class="form-wrap">
+          <app-censec-form *ngIf="censec" (formReady)="addControl('censec', $event)">></app-censec-form>
+        </div>
+
+        <div class="form-wrap">
+          <app-detran-form *ngIf="detran" (formReady)="addControl('detran', $event)">></app-detran-form>
+        </div>
+
+        <div class="form-wrap">
+          <app-infocrim-form *ngIf="infocrim" (formReady)="addControl('infocrim', $event)">></app-infocrim-form>
+        </div>
+
+        <div class="form-wrap">
+          <app-jucesp-form *ngIf="jucesp" (formReady)="addControl('jucesp', $event)">></app-jucesp-form>
+        </div>
+
+        <div class="form-wrap">
+          <app-sitel-form *ngIf="sitel" (formReady)="addControl('sitel', $event)">></app-sitel-form>
+        </div>
+
+        <div class="form-wrap">
+          <app-sivec-form *ngIf="sivec" (formReady)="addControl('sivec', $event)">></app-sivec-form>
+        </div>
+
+        <button (click)="search()" mat-button color="primary">Enviar</button>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="content">
+        <h4> Pesquisas </h4>
+
+        <div class="result">
+
+        </div>
+      </div>
+    </div>
+
   </div>
-
-  <div class="content">
-    <div class="form-wrap">
-      <app-arisp-form *ngIf="arisp" (formReady)="addControl('arisp', $event)">></app-arisp-form>
-    </div>
-
-    <div class="form-wrap">
-      <app-arpenp-form *ngIf="arpenp" (formReady)="addControl('arpenp', $event)">></app-arpenp-form>
-    </div>
-
-
-    <div class="form-wrap">
-    </div>
-    <button (click)="search()" mat-button color="primary">Enviar</button>
-  </div>
-
-  <div class="content">
-    <h4> Pesquisas </h4>
-
-    <div class="result">
-
-    </div>
-  </div>`
