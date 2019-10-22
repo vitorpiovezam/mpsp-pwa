@@ -1,3 +1,4 @@
+import { LoginComponent } from './pages/login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
@@ -5,7 +6,7 @@ import { ReactiveSearchComponent } from './pages/reactive-search/reactive-search
 import { MySearchesComponent } from './pages/my-searches/my-searches.component';
 
 const routes: Routes = [
-  { path: '', component: ReactiveSearchComponent },
+  { path: '', component: LoginComponent },
   { path: 'search', component: ReactiveSearchComponent },
   { path: 'my-searches', component: MySearchesComponent }
 ];

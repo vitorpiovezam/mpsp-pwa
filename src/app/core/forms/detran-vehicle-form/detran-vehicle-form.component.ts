@@ -1,15 +1,15 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { IDetranRequest } from './detran.model';
+import { IDetranCNHRequest } from './detran.model';
 import { DetranService } from '../../services/detran.service';
 
 @Component({
-  selector: 'app-detran-form',
-  templateUrl: './detran-form.component.html',
-  styleUrls: ['./detran-form.component.scss']
+  selector: 'app-detran-vehicle-form',
+  templateUrl: './detran-vehicle-form.component.html',
+  styleUrls: ['./detran-vehicle-form.component.scss']
 })
 
-export class DetranFormComponent implements OnInit {
+export class DetranVehicleFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
   title: string;
   form: FormGroup;
@@ -20,7 +20,7 @@ export class DetranFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.title = 'Detran';
+    this.title = 'Detran CNH';
     this.form = this.formBuilder.group({
       nome: new FormControl('', [Validators.required]),
       cep: new FormControl('')
@@ -30,7 +30,7 @@ export class DetranFormComponent implements OnInit {
     this.formReady.emit(this.form);
   }
 
-  search(detranRequest: IDetranRequest) {
+  search(detranRequest: IDetranCNHRequest) {
     this.detranService.getFormData(detranRequest).subscribe(
       res => console.log(res)
     )

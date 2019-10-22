@@ -1,3 +1,5 @@
+import { DetranVehicleFormComponent } from './core/forms/detran-vehicle-form/detran-vehicle-form.component';
+import { DetranTimeLineFormComponent } from './core/forms/detran-timeline-form/detran-timeline-form.component';
 import { SivecService } from './core/services/sivec.service';
 import { SitelService } from './core/services/sitel.service';
 import { JucespService } from './core/services/jucesp.service';
@@ -10,7 +12,7 @@ import { SivecFormComponent } from './core/forms/sivec-form/sivec-form.component
 import { SitelFormComponent } from './core/forms/sitel-form/sitel-form.component';
 import { JucespFormComponent } from './core/forms/jucesp-form/jucesp-form.component';
 import { InfocrimFormComponent } from './core/forms/infocrim-form/infocrim-form.component';
-import { DetranFormComponent } from './core/forms/detran-form/detran-form.component';
+import { DetranCNHFormComponent } from './core/forms/detran-cnh-form/detran-cnh-form.component';
 import { CensecFormComponent } from './core/forms/censec-form/censec-form.component';
 import { CagedFormComponent } from './core/forms/caged-form/caged-form.component';
 import { CadespFormComponent } from './core/forms/cadesp-form/cadesp-form.component';
@@ -26,7 +28,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ReactiveSearchComponent } from './pages/reactive-search/reactive-search.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatSelectModule } from '@angular/material';
+import { MatSelectModule, MatCardModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
 import { ArispFormComponent } from './core/forms/arisp-form/arisp-form.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -36,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArpenpFormComponent } from './core/forms/arpenp-form/arpenp-form.component';
 import { ArpenpService } from './core/services/arpenp.service';
 import { MatOptionModule } from '@angular/material/core';
+import { LoginComponent } from './pages/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,11 +51,14 @@ import { MatOptionModule } from '@angular/material/core';
     CadespFormComponent,
     CagedFormComponent,
     CensecFormComponent,
-    DetranFormComponent,
+    DetranCNHFormComponent,
+    DetranTimeLineFormComponent,
+    DetranVehicleFormComponent,
     InfocrimFormComponent,
     JucespFormComponent,
     SitelFormComponent,
-    SivecFormComponent
+    SivecFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +74,8 @@ import { MatOptionModule } from '@angular/material/core';
     MatProgressSpinnerModule,
     HttpClientModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [
     ArispService,

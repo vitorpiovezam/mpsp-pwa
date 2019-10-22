@@ -3,9 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injector, Injectable } from '@angular/core';
 import { IInfocrimResponse } from '../forms/infocrim-form/infocrim.model';
+import { BaseResourceService } from './base-resource.service';
 
 @Injectable()
-export class InfocrimService {
+export class InfocrimService implements BaseResourceService {
   http: HttpClient;
 
   constructor(http: HttpClient){ }

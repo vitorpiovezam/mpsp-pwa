@@ -9,7 +9,7 @@
         <mat-checkbox color="primary" (click)="disableControl(cadesp, 'cadesp')" [(ngModel)]="cadesp">Cadesp</mat-checkbox>
         <mat-checkbox color="primary" (click)="disableControl(caged, 'caged')" [(ngModel)]="caged">Caged</mat-checkbox>
         <mat-checkbox color="primary" (click)="disableControl(censec, 'censec')" [(ngModel)]="censec">Censec</mat-checkbox>
-        <mat-checkbox color="primary" (click)="disableControl(detran, 'detran')" [(ngModel)]="detran">Detran</mat-checkbox>
+        <mat-checkbox color="primary" (click)="disableControl(detranCnh, 'detranCnh')" [(ngModel)]="detranCnh">detran-cnh</mat-checkbox>
         <mat-checkbox color="primary" (click)="disableControl(infocrim, 'infocrim')" [(ngModel)]="infocrim">Infocrim</mat-checkbox>
         <mat-checkbox color="primary" (click)="disableControl(jucesp, 'jucesp')" [(ngModel)]="jucesp">Jucesp</mat-checkbox>
         <mat-checkbox color="primary" (click)="disableControl(sitel, 'sitel')" [(ngModel)]="sitel">Sitel</mat-checkbox>
@@ -43,10 +43,12 @@
         </div>
 
         <div class="form-wrap">
-          <app-detran-form *ngIf="detran" (formReady)="addControl('detran', $event)">></app-detran-form>
+          <app-detran-cnh-form *ngIf="detranCnh" (formReady)="addControl('detranCnh', $event)">></app-detran-cnh-form>
         </div>
 
         <div class="form-wrap">
+            .l.     cllll' ., .lc  :; .l'       l.   DE: GNOME
+            .c       :lllc  ;cl:  .l' .ll.      :'   WM: KWin
           <app-infocrim-form *ngIf="infocrim" (formReady)="addControl('infocrim', $event)">></app-infocrim-form>
         </div>
 
@@ -62,7 +64,7 @@
           <app-sivec-form *ngIf="sivec" (formReady)="addControl('sivec', $event)">></app-sivec-form>
         </div>
 
-        <button (click)="search()" mat-button color="primary">Enviar</button>
+        <button (click)="search()" [disabled]=" this.form.status === 'INVALID'" mat-button color="primary">Enviar</button>
       </div>
     </div>
 

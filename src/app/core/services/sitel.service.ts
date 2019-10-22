@@ -3,9 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injector, Injectable } from '@angular/core';
 import { ISitelResponse, ISitelRequest } from '../forms/sitel-form/sitel.model';
+import { BaseResourceService } from './base-resource.service';
 
 @Injectable()
-export class SitelService {
+export class SitelService implements BaseResourceService{
   http: HttpClient;
 
   constructor(http: HttpClient){ }

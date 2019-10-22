@@ -22,8 +22,7 @@ export class CadespFormComponent implements OnInit {
   ngOnInit() {
     this.title ='Cadesp';
     this.form = this.formBuilder.group({
-      nome: new FormControl('', [Validators.required]),
-      cep: new FormControl('')
+      cnpj: new FormControl('', [Validators.required]),
     });
 
     // Emit the form group to the father to do whatever it wishes

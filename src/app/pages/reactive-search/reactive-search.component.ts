@@ -1,21 +1,25 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, FormArray, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { pipe, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-reactive-search',
   templateUrl: './reactive-search.component.html',
-  styleUrls: ['./reactive-search.component.scss']
+  styleUrls: ['./reactive-search.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })  
 export class ReactiveSearchComponent implements OnInit {
   form: FormGroup;
+  isValid: boolean = false;
 
-  arisp = true;
+  arisp = false;
   arpenp = false;
   cadesp = false;
   caged = false;
   censec = false;
-  detran = false;
+  detranCnh = false;
+  detranTimeLine = false;
+  detranVehicleLine = false;
   infocrim = false;
   jucesp = false;
   sitel = false;

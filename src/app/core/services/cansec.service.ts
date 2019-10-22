@@ -3,9 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injector, Injectable } from '@angular/core';
 import { ICensecResponse, ICensecRequest } from '../forms/censec-form/censec.model';
+import { BaseResourceService } from './base-resource.service';
 
 @Injectable()
-export class CensecService {
+export class CensecService implements BaseResourceService {
   http: HttpClient;
 
   constructor(http: HttpClient){ }
