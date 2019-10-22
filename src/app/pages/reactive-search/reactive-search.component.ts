@@ -1,6 +1,16 @@
+import { ArispService } from './../../core/services/arisp.service';
+import { IJucespResponse } from './../../core/forms/jucesp-form/jucesp.model';
+import { IInfocrimResponse } from './../../core/forms/infocrim-form/infocrim.model';
+import { IDetranResponse } from './../../core/forms/detran-form/detran.model';
+import { ICensecResponse } from './../../core/forms/censec-form/censec.model';
+import { ICadespResponse } from './../../core/forms/cadesp-form/cadesp.model';
+import { IArpenpResponse } from './../../core/forms/arpenp-form/arpenp.model';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormControl, FormArray, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { pipe, Observable } from 'rxjs';
+import { IArispResponse, IArispRequest } from 'src/app/core/forms/arisp-form/arisp.model';
+import { ISitelResponse } from 'src/app/core/forms/sitel-form/sitel.model';
+import { ISivecResponse } from 'src/app/core/forms/sivec-form/sivec.model';
 
 @Component({
   selector: 'app-reactive-search',
@@ -21,7 +31,21 @@ export class ReactiveSearchComponent implements OnInit {
   sitel = false;
   sivec = false;
 
-  constructor(private formBuilder: FormBuilder) { 
+  arispResponse: IArispResponse;
+  arpenpResponse: IArpenpResponse;
+  cadespResponse: ICadespResponse;
+  cagedResponse: object;
+  censecResponse: ICensecResponse;
+  detranResponse: IDetranResponse;
+  infocrimResponse: IInfocrimResponse;
+  jucespResponse: IJucespResponse;
+  sitelResponse: ISitelResponse;
+  sivecResponse: ISivecResponse;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private arispService: ArispService
+    ) { 
     this.form = this.formBuilder.group({});
   }
 
@@ -41,6 +65,63 @@ export class ReactiveSearchComponent implements OnInit {
   }
 
   search() {
-    console.log(Object.entries(this.form.value));
+    const formValues = Object.entries(this.form.value);
+
+    for (const form of formValues) {
+      if (form[0] == 'arisp') {
+        const arispRequest: IArispRequest = formValues.filter(x => x[0] === 'arisp')[0][1];
+        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+      }
+
+      if (form[0] == 'arisp') {
+        const arispRequest: IArispRequest = formValues.filter(x => x[0] === 'arisp')[0][1];
+        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+      }
+
+      if (form[0] == 'arisp') {
+        const arispRequest: IArispRequest = formValues.filter(x => x[0] === 'arisp')[0][1];
+        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+      }
+
+      if (form[0] == 'arisp') {
+        const arispRequest: IArispRequest = formValues.filter(x => x[0] === 'arisp')[0][1];
+        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+      }
+
+      if (form[0] == 'arisp') {
+        const arispRequest: IArispRequest = formValues.filter(x => x[0] === 'arisp')[0][1];
+        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+      }
+
+      if (form[0] == 'arisp') {
+        const arispRequest: IArispRequest = formValues.filter(x => x[0] === 'arisp')[0][1];
+        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+      }
+
+      if (form[0] == 'arisp') {
+        const arispRequest: IArispRequest = formValues.filter(x => x[0] === 'arisp')[0][1];
+        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+      }
+
+      if (form[0] == 'arisp') {
+        const arispRequest: IArispRequest = formValues.filter(x => x[0] === 'arisp')[0][1];
+        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+      }
+
+      if (form[0] == 'arisp') {
+        const arispRequest: IArispRequest = formValues.filter(x => x[0] === 'arisp')[0][1];
+        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+      }
+
+      if (form[0] == 'arisp') {
+        const arispRequest: IArispRequest = formValues.filter(x => x[0] === 'arisp')[0][1];
+        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+      }
+
+      if (form[0] == 'arisp') {
+        const arispRequest: IArispRequest = formValues.filter(x => x[0] === 'arisp')[0][1];
+        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+      }
+    }
   }
 }

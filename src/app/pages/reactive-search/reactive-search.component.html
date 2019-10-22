@@ -1,26 +1,56 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-      <h4> Portais disponiveis para consulta </h4>
+    <div class="col-md-6">
+      <mat-tab-group>
+        <mat-tab label="Imobiliario">
+          <div class="options">
+            <mat-checkbox color="primary" (click)="disableControl(arisp, 'arisp')" [(ngModel)]="arisp">Arisp</mat-checkbox>
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Civil">
+          <div class="options">
+            <mat-checkbox color="primary" (click)="disableControl(arpenp, 'arpenp')" [(ngModel)]="arpenp">Arpenp</mat-checkbox>
+            <mat-checkbox color="primary" (click)="disableControl(detran, 'detran')" [(ngModel)]="detran">Detran</mat-checkbox>
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Juridico">
+          <div class="options">
+            <mat-checkbox color="primary" (click)="disableControl(cadesp, 'cadesp')" [(ngModel)]="cadesp">Cadesp</mat-checkbox>
+            <mat-checkbox color="primary" (click)="disableControl(censec, 'censec')" [(ngModel)]="censec">Censec</mat-checkbox>
+            <mat-checkbox color="primary" (click)="disableControl(jucesp, 'jucesp')" [(ngModel)]="jucesp">Jucesp</mat-checkbox>
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Trabalhista">
+          <div class="options">
+            <mat-checkbox color="primary" (click)="disableControl(caged, 'caged')" [(ngModel)]="caged">Caged</mat-checkbox>
+          </div>
+        </mat-tab>
+      
+        <mat-tab label="Criminal">
+          <div class="options">
+            <mat-checkbox color="primary" (click)="disableControl(infocrim, 'infocrim')" [(ngModel)]="infocrim">Infocrim</mat-checkbox>
+            <mat-checkbox color="primary" (click)="disableControl(sivec, 'sivec')" [(ngModel)]="sivec">Sivec</mat-checkbox>
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Eleitoral">
+          <div class="options">
+            <mat-checkbox color="primary" (click)="disableControl(sitel, 'sitel')" [(ngModel)]="sitel">Sitel</mat-checkbox>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
 
       <div class="list">
-        <mat-checkbox color="primary" (click)="disableControl(arisp, 'arisp')" [(ngModel)]="arisp">Arisp</mat-checkbox>
-        <mat-checkbox color="primary" (click)="disableControl(arpenp, 'arpenp')" [(ngModel)]="arpenp">Arpenp</mat-checkbox>
-        <mat-checkbox color="primary" (click)="disableControl(cadesp, 'cadesp')" [(ngModel)]="cadesp">Cadesp</mat-checkbox>
-        <mat-checkbox color="primary" (click)="disableControl(caged, 'caged')" [(ngModel)]="caged">Caged</mat-checkbox>
-        <mat-checkbox color="primary" (click)="disableControl(censec, 'censec')" [(ngModel)]="censec">Censec</mat-checkbox>
-        <mat-checkbox color="primary" (click)="disableControl(detran, 'detran')" [(ngModel)]="detran">Detran</mat-checkbox>
-        <mat-checkbox color="primary" (click)="disableControl(infocrim, 'infocrim')" [(ngModel)]="infocrim">Infocrim</mat-checkbox>
-        <mat-checkbox color="primary" (click)="disableControl(jucesp, 'jucesp')" [(ngModel)]="jucesp">Jucesp</mat-checkbox>
-        <mat-checkbox color="primary" (click)="disableControl(sitel, 'sitel')" [(ngModel)]="sitel">Sitel</mat-checkbox>
-        <mat-checkbox color="primary" (click)="disableControl(sivec, 'sivec')" [(ngModel)]="sivec">Sivec</mat-checkbox>
       </div>
       <pre>
     {{ form.value | json }}
         </pre>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="content">
         <div class="form-wrap">
           <app-arisp-form *ngIf="arisp" (formReady)="addControl('arisp', $event)">></app-arisp-form>
@@ -67,7 +97,7 @@
     </div>
 
 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="content">
         <h4> Pesquisas </h4>
 

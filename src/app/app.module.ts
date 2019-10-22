@@ -63,6 +63,7 @@ import { MatOptionModule } from '@angular/material/core';
     MatToolbarModule,
     MatCheckboxModule,
     FormsModule,
+    HttpClientModule,
     MatInputModule,
     MatButtonModule,
     MatProgressSpinnerModule,

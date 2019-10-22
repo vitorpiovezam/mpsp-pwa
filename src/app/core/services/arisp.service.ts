@@ -6,13 +6,13 @@ import { IArispResponse, IArispRequest } from '../forms/arisp-form/arisp.model';
 
 @Injectable()
 export class ArispService {
-  http: HttpClient;
 
-  constructor(http: HttpClient){ 
+  constructor(private http: HttpClient){ 
   }
 
   getFormData(arispRequest: IArispRequest): Observable<IArispResponse> {
-    return this.http.get<IArispResponse>(`${environment.apiUrl}/${arispRequest.cnpj}`);
+    console.log(arispRequest)
+    return this.http.post<IArispResponse>(`${environment.apiUrl}/arisp`, { arispRequest }, { headers: { relatoryId: '1'}});
   }
 
 }
