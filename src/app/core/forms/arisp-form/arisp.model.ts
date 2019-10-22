@@ -1,5 +1,5 @@
 export interface IArispRequest {
-  cnpj: string;
+  cnpj?: string;
 }
 
 export interface IArispResponse {

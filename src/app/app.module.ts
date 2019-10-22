@@ -69,6 +69,7 @@ import { LoginComponent } from './pages/login/login.component';
     MatToolbarModule,
     MatCheckboxModule,
     FormsModule,
+    HttpClientModule,
     MatInputModule,
     MatButtonModule,
     MatProgressSpinnerModule,
