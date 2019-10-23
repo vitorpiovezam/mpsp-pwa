@@ -24,7 +24,7 @@ export class ArispFormComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {
     
-   }
+  }
 
   ngOnInit() {
 

@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
   `,
   styles: [
     `
-      .block {
+      .block,mat-form-field {
         display: block !important;
       }
 

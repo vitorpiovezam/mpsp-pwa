@@ -11,7 +11,9 @@
         <mat-tab label="Civil">
           <div class="options">
             <mat-checkbox color="primary" (click)="disableControl(arpenp, 'arpenp')" [(ngModel)]="arpenp">Arpenp</mat-checkbox>
-            <mat-checkbox color="primary" (click)="disableControl(detran, 'detran')" [(ngModel)]="detran">Detran</mat-checkbox>
+            <mat-checkbox color="primary" (click)="disableControl(detranCnh, 'detranCnh')" [(ngModel)]="detranCnh">Detran Cnh</mat-checkbox>
+            <mat-checkbox color="primary" (click)="disableControl(detranTimeLine, 'detranTimeLine')" [(ngModel)]="detranTimeLine">Detran Linha do Tempo</mat-checkbox>
+            <mat-checkbox color="primary" (click)="disableControl(detranVehicle, 'detranVehicle')" [(ngModel)]="detranVehicle">Detran Veiculo</mat-checkbox>
           </div>
         </mat-tab>
 
@@ -78,6 +80,14 @@
 
         <div class="form-wrap">
           <app-detran-cnh-form *ngIf="detranCnh" (formReady)="addControl('detranCnh', $event)">></app-detran-cnh-form>
+        </div>
+
+        <div class="form-wrap">
+          <app-detran-timeline-form *ngIf="detranTimeLine" (formReady)="addControl('detranTimeline', $event)">></app-detran-timeline-form>
+        </div>
+
+        <div class="form-wrap">
+          <app-detran-vehicle-form *ngIf="detranVehicle" (formReady)="addControl('detranVehicle', $event)">></app-detran-vehicle-form>
         </div>
 
         <div class="form-wrap">

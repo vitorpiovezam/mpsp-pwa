@@ -20,7 +20,7 @@ export class DetranVehicleFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.title = 'Detran CNH';
+    this.title = 'Detran Veiculo';
     this.form = this.formBuilder.group({
       nome: new FormControl('', [Validators.required]),
       cep: new FormControl('')
