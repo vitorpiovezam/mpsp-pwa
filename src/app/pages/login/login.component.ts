@@ -9,13 +9,13 @@ import { Component, OnInit } from '@angular/core';
   <mat-card-content>
     <form [formGroup]="form">
       <p>
-        <mat-form-field>
+        <mat-form-field class="block">
           <input type="text" matInput placeholder="Username" formControlName="username">
         </mat-form-field>
       </p>
 
       <p>
-        <mat-form-field>
+        <mat-form-field class="block">
           <input type="password" matInput placeholder="Password" formControlName="password">
         </mat-form-field>
       </p>
@@ -42,7 +42,7 @@ import { Component, OnInit } from '@angular/core';
     margin: 100px 0px;
   }
 
-  .mat-form-field {
+  .mat-form-field class="block" {
     width: 100%;
     min-width: 300px;
   }

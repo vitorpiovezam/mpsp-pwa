@@ -1,5 +1,5 @@
 export interface IJucespRequest{
-  companyName: String
+  companyName?: String
 }
 
 export interface IJucespResponse{

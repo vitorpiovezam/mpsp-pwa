@@ -1,40 +1,40 @@
 export interface IDetranCNHRequest {
-  cpf: String
+  cpf?: String
 }
 
 export interface IDetranCNHResponse {
-  imagePath: String
-  renach: String
-  category: String
-  emission: String
-  birthDate: String
-  conductionName: String
-  fatherName: String
-  motherName: String
-  registerDate: String
-  typeGraph: String
-  identification: String
-  cpf: String
+  imagePath?: String
+  renach?: String
+  category?: String
+  emission?: String
+  birthDate?: String
+  conductionName?: String
+  fatherName?: String
+  motherName?: String
+  registerDate?: String
+  typeGraph?: String
+  identification?: String
+  cpf?: String
 }
 
 export interface DetranTimeLineRequest {
-  registry: String
-  rg: String
-  conductorName: String
-  pgu: String
-  uf: String
+  registry?: String
+  rg?: String
+  conductorName?: String
+  pgu?: String
+  uf?: String
 }
 
 export interface DetranTimeLineResponse {
-  registryFileUrl: String
+  registryFileUrl?: String
 }
 
 export interface DetranVehicleRequest {
-  board: String
-  document: String
-  renavam: String
+  board?: String
+  document?: String
+  renavam?: String
 }
 
 export interface DetranVehicleResponse {
-  registryFileUrl: String
+  registryFileUrl?: String
 } 

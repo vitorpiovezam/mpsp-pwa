@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <mat-tab-group>
         <mat-tab label="Imobiliario">
           <div class="options">
@@ -42,12 +42,9 @@
           </div>
         </mat-tab>
       </mat-tab-group>
-      <pre>
-    {{ form.value | json }}
-        </pre>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="content">
         <div class="form-wrap">
           <app-arisp-form *ngIf="arisp" (formReady)="addControl('arisp', $event)">></app-arisp-form>
@@ -62,9 +59,18 @@
         </div>
 
         <div class="form-wrap">
-          <app-caged-form *ngIf="caged" (formReady)="addControl('caged', $event)">></app-caged-form>
+          <app-caged-company-form *ngIf="caged" (formReady)="addControl('cagedCompany', $event)">></app-caged-form>
         </div>
 
+        <div class="form-wrap">
+          <app-caged-responsible-form *ngIf="responsible" (formReady)="addControl('cagedResponsible', $event)">></app-caged-form>
+        </div>
+
+        <div class="form-wrap">
+          <app-caged-worker-form *ngIf="worker" (formReady)="addControl('cagedWorker', $event)">></app-caged-form>
+        </div>
+
+        
         <div class="form-wrap">
           <app-censec-form *ngIf="censec" (formReady)="addControl('censec', $event)">></app-censec-form>
         </div>
@@ -74,8 +80,6 @@
         </div>
 
         <div class="form-wrap">
-            .l.     cllll' ., .lc  :; .l'       l.   DE: GNOME
-            .c       :lllc  ;cl:  .l' .ll.      :'   WM: KWin
           <app-infocrim-form *ngIf="infocrim" (formReady)="addControl('infocrim', $event)">></app-infocrim-form>
         </div>
 
@@ -91,12 +95,11 @@
           <app-sivec-form *ngIf="sivec" (formReady)="addControl('sivec', $event)">></app-sivec-form>
         </div>
 
-        <button (click)="search()" [disabled]=" this.form.status === 'INVALID'" mat-button color="primary">Enviar</button>
+        <button (click)="search()" *ngIf="!isEmpty(form.value)" [disabled]=" this.form.status === 'INVALID'" mat-button color="primary">Enviar</button>
       </div>
     </div>
 
-
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="content">
         <h4> Pesquisas </h4>
 

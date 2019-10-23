@@ -1,3 +1,5 @@
+import { CagedWorkerFormComponent } from './core/forms/caged-worker-form/caged-worker-form';
+import { CagedResponsibleFormComponent } from './core/forms/caged-responsible-form/caged-responsible-form';
 import { DetranVehicleFormComponent } from './core/forms/detran-vehicle-form/detran-vehicle-form.component';
 import { DetranTimeLineFormComponent } from './core/forms/detran-timeline-form/detran-timeline-form.component';
 import { SivecService } from './core/services/sivec.service';
@@ -14,7 +16,6 @@ import { JucespFormComponent } from './core/forms/jucesp-form/jucesp-form.compon
 import { InfocrimFormComponent } from './core/forms/infocrim-form/infocrim-form.component';
 import { DetranCNHFormComponent } from './core/forms/detran-cnh-form/detran-cnh-form.component';
 import { CensecFormComponent } from './core/forms/censec-form/censec-form.component';
-import { CagedFormComponent } from './core/forms/caged-form/caged-form.component';
 import { CadespFormComponent } from './core/forms/cadesp-form/cadesp-form.component';
 import { ArispService } from './core/services/arisp.service';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -39,6 +40,7 @@ import { ArpenpFormComponent } from './core/forms/arpenp-form/arpenp-form.compon
 import { ArpenpService } from './core/services/arpenp.service';
 import { MatOptionModule } from '@angular/material/core';
 import { LoginComponent } from './pages/login/login.component';
+import { CagedCompanyFormComponent } from './core/forms/caged-company-form/caged-company-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,9 @@ import { LoginComponent } from './pages/login/login.component';
     ArispFormComponent,
     ArpenpFormComponent,
     CadespFormComponent,
-    CagedFormComponent,
+    CagedCompanyFormComponent,
+    CagedResponsibleFormComponent,
+    CagedWorkerFormComponent,
     CensecFormComponent,
     DetranCNHFormComponent,
     DetranTimeLineFormComponent,

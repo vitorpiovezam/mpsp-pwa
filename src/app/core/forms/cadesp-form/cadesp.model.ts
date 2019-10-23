@@ -1,5 +1,5 @@
 export interface ICadespRequest {
-  cnpj: string;
+  cnpj?: string;
 }
 
 export interface ICadespResponse {

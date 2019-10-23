@@ -3,12 +3,12 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { CagedService } from '../../services/caged.service';
 
 @Component({
-  selector: 'app-caged-form',
-  templateUrl: './caged-form.component.html',
-  styleUrls: ['./caged-form.component.scss']
+  selector: 'app-caged-responsible-form',
+  templateUrl: './caged-responsible-form.component.html',
+  styleUrls: ['./caged-responsible-form.component.scss']
 })
 
-export class CagedFormComponent implements OnInit {
+export class CagedResponsibleFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
   title: string;
   form: FormGroup;

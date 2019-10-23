@@ -8,8 +8,7 @@ import { BaseResourceService } from './base-resource.service';
 @Injectable()
 export class ArispService {
 
-  constructor(private http: HttpClient){ 
-  }
+  constructor(private http: HttpClient){ }
 
   getFormData(arispRequest: IArispRequest): Observable<IArispResponse> {
     console.log(arispRequest)

@@ -14,7 +14,17 @@ import { Component } from '@angular/core';
       <router-outlet></router-outlet>
     </div>
   `,
-  styles: []
+  styles: [
+    `
+      .block {
+        display: block !important;
+      }
+
+      input {
+        display: block !important;
+      }
+    `
+  ]
 })
 export class AppComponent {
   title = 'mpsp-pwa';

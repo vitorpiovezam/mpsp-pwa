@@ -1,7 +1,7 @@
 export interface IArpenpRequest {
-  registryType: string;
-  processNumber: string;
-  placeId: Number;
+  registryType?: string;
+  processNumber?: string;
+  placeId?: Number;
 }
 
 export interface IArpenpResponse {
