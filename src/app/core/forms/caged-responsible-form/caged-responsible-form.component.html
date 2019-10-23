@@ -1,11 +1,16 @@
 <h4>{{ title }}</h4>
 
- <form [formGroup]="form">
-    <mat-form-field class="block" class="example-full-width">
-      <input matInput placeholder="CEP*" formControlName="cep">
-    </mat-form-field>
+<form [formGroup]="form">
+  <mat-form-field class="block">
+    <mat-label>Tipo de Pesquisa</mat-label>
+    <mat-select formControlName="searchType">
+      <mat-option *ngFor="let type of searchType; let i = index" [value]="i">
+        {{ type }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-    <mat-form-field class="block" class="example-full-width">
-      <input matInput placeholder="Nome*" formControlName="nome">
-    </mat-form-field>
+  <mat-form-field class="block" class="example-full-width">
+    <input matInput placeholder="Termo*" formControlNamet="term">
+  </mat-form-field>
 </form>

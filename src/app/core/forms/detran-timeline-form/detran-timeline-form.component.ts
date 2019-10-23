@@ -22,8 +22,11 @@ export class DetranTimeLineFormComponent implements OnInit {
   ngOnInit() {
     this.title = 'Detran timeline';
     this.form = this.formBuilder.group({
-      nome: new FormControl('', [Validators.required]),
-      cep: new FormControl('')
+      registry: new FormControl('', [Validators.required]),
+      rg: new FormControl('', [Validators.required]),
+      conductorName: new FormControl('', [Validators.required]),
+      pgu: new FormControl('', [Validators.required]),
+      uf: new FormControl('', [Validators.required])
     });
 
     // Emit the form group to the father to do whatever it wishes

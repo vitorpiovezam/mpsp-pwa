@@ -22,8 +22,7 @@ export class CensecFormComponent implements OnInit {
   ngOnInit() {
     this.title = 'Censec';
     this.form = this.formBuilder.group({
-      nome: new FormControl('', [Validators.required]),
-      cep: new FormControl('')
+      cpfCnpj: new FormControl('', [Validators.required]),
     });
 
     // Emit the form group to the father to do whatever it wishes

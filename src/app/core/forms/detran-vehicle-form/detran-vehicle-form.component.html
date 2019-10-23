@@ -2,11 +2,14 @@
 
  <form [formGroup]="form" (ngSubmit)="search(form.value)">
     <mat-form-field class="block" class="example-full-width">
-      <input matInput placeholder="CEP*" formControlName="cep">
+      <input matInput placeholder="Placa*" formControlName="board">
     </mat-form-field>
 
     <mat-form-field class="block" class="example-full-width">
-      <input matInput placeholder="Nome*" formControlName="nome">
+      <input matInput placeholder="Documento*" formControlName="document">
     </mat-form-field>
 
+    <mat-form-field class="block" class="example-full-width">
+      <input matInput placeholder="Renavam*" formControlName="renavam">
+    </mat-form-field>
 </form>

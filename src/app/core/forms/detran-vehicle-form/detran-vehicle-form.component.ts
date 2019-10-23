@@ -22,8 +22,9 @@ export class DetranVehicleFormComponent implements OnInit {
   ngOnInit() {
     this.title = 'Detran Veiculo';
     this.form = this.formBuilder.group({
-      nome: new FormControl('', [Validators.required]),
-      cep: new FormControl('')
+      board: new FormControl('', [Validators.required]),
+      document: new FormControl('', [Validators.required]),
+      renavam: new FormControl('', [Validators.required])
     });
 
     // Emit the form group to the father to do whatever it wishes

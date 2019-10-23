@@ -22,8 +22,7 @@ export class JucespFormComponent implements OnInit {
   ngOnInit() {
     this.title = 'Jucesp';
     this.form = this.formBuilder.group({
-      nome: new FormControl('', [Validators.required]),
-      cep: new FormControl('')
+      companyName: new FormControl('', [Validators.required]),
     });
 
     // Emit the form group to the father to do whatever it wishes

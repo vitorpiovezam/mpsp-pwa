@@ -21,8 +21,8 @@ export class CagedWorkerFormComponent implements OnInit {
   ngOnInit() {
     this.title = 'Caged Trabalhador';
     this.form = this.formBuilder.group({
-      nome: new FormControl('', [Validators.required]),
-      cep: new FormControl()
+      searchType: new FormControl(0, [Validators.required]),
+      term: new FormControl('', [Validators.required])
     });
 
     // Emit the form group to the father to do whatever it wishes

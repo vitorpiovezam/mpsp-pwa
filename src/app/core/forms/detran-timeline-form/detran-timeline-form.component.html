@@ -2,11 +2,23 @@
 
  <form [formGroup]="form" (ngSubmit)="search(form.value)">
     <mat-form-field class="block" class="example-full-width">
-      <input matInput placeholder="CEP*" formControlName="cep">
+      <input matInput placeholder="Registro*" formControlName="registry">
     </mat-form-field>
 
     <mat-form-field class="block" class="example-full-width">
-      <input matInput placeholder="Nome*" formControlName="nome">
+      <input matInput placeholder="RG*" formControlName="rg">
+    </mat-form-field>
+
+    <mat-form-field class="block" class="example-full-width">
+      <input matInput placeholder="Nome do Condutor*" formControlName="conductorName">
+    </mat-form-field>
+
+    <mat-form-field class="block" class="example-full-width">
+      <input matInput placeholder="PGU*" formControlName="pgu">
+    </mat-form-field>
+
+    <mat-form-field class="block" class="example-full-width">
+      <input matInput placeholder="uf*" formControlName="uf">
     </mat-form-field>
 
 </form>
