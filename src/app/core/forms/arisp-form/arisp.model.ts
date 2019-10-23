@@ -3,7 +3,14 @@ export interface IArispRequest {
 }
 
 export interface IArispResponse {
-  foo: string;
+  registries: ArispRegistry[];
+}
+
+interface ArispRegistry {
+  cityName: String
+  office: String
+  registryId: String
+  registryFileUrl: String
 }
 
 export const SearchType: string[] = [

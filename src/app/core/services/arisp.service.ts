@@ -11,7 +11,6 @@ export class ArispService {
   constructor(private http: HttpClient){ }
 
   getFormData(arispRequest: IArispRequest): Observable<IArispResponse> {
-    console.log(arispRequest)
     return this.http.post<IArispResponse>(`${environment.apiUrl}/arisp`, { arispRequest }, { headers: { relatoryId: '1'}});
   }
 

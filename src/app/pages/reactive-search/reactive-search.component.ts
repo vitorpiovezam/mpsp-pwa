@@ -113,7 +113,7 @@ export class ReactiveSearchComponent implements OnInit {
     for (const [i, form] of formValues.entries()){
       if (form[0] === 'arisp') {
         const arispRequest = form[i] as IArispRequest; 
-        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+        this.arispService.getFormData(arispRequest).subscribe(x => this.arispResponse = x);
       }
 
       if (form[0] === 'arpenp') {
