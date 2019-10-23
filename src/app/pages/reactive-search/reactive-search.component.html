@@ -25,7 +25,9 @@
 
         <mat-tab label="Trabalhista">
           <div class="options">
-            <mat-checkbox color="primary" (click)="disableControl(caged, 'caged')" [(ngModel)]="caged">Caged</mat-checkbox>
+            <mat-checkbox color="primary" (click)="disableControl(cagedWorker, 'cagedWorker')" [(ngModel)]="cagedWorker">Caged Trabalho</mat-checkbox>
+            <mat-checkbox color="primary" (click)="disableControl(cagedResponsible, 'cagedResponsible')" [(ngModel)]="cagedResponsible">Caged Responsavel</mat-checkbox>
+            <mat-checkbox color="primary" (click)="disableControl(cagedCompany, 'cagedCompany')" [(ngModel)]="cagedCompany">Caged Empresa</mat-checkbox>
           </div>
         </mat-tab>
       
@@ -59,18 +61,17 @@
         </div>
 
         <div class="form-wrap">
-          <app-caged-company-form *ngIf="caged" (formReady)="addControl('cagedCompany', $event)">></app-caged-form>
+          <app-caged-company-form *ngIf="cagedCompany" (formReady)="addControl('cagedCompany', $event)"></app-caged-company-form>
         </div>
 
         <div class="form-wrap">
-          <app-caged-responsible-form *ngIf="responsible" (formReady)="addControl('cagedResponsible', $event)">></app-caged-form>
+          <app-caged-responsible-form *ngIf="cagedResponsible" (formReady)="addControl('cagedResponsible', $event)"></app-caged-responsible-form>
         </div>
 
         <div class="form-wrap">
-          <app-caged-worker-form *ngIf="worker" (formReady)="addControl('cagedWorker', $event)">></app-caged-form>
+          <app-caged-worker-form *ngIf="cagedWorker" (formReady)="addControl('cagedWorker', $event)"></app-caged-worker-form>
         </div>
 
-        
         <div class="form-wrap">
           <app-censec-form *ngIf="censec" (formReady)="addControl('censec', $event)">></app-censec-form>
         </div>

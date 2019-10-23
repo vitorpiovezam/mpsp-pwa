@@ -29,11 +29,4 @@ export class DetranVehicleFormComponent implements OnInit {
     // Emit the form group to the father to do whatever it wishes
     this.formReady.emit(this.form);
   }
-
-  search(detranRequest: IDetranCNHRequest) {
-    this.detranService.getFormData(detranRequest).subscribe(
-      res => console.log(res)
-    )
-  }
-
 }

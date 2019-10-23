@@ -1,5 +1,5 @@
-import { CagedWorkerFormComponent } from './core/forms/caged-worker-form/caged-worker-form';
-import { CagedResponsibleFormComponent } from './core/forms/caged-responsible-form/caged-responsible-form';
+import { CagedWorkerFormComponent } from './core/forms/caged-worker-form/caged-worker-form.component';
+import { CagedResponsibleFormComponent } from './core/forms/caged-responsible-form/caged-responsible-form.component';
 import { DetranVehicleFormComponent } from './core/forms/detran-vehicle-form/detran-vehicle-form.component';
 import { DetranTimeLineFormComponent } from './core/forms/detran-timeline-form/detran-timeline-form.component';
 import { SivecService } from './core/services/sivec.service';

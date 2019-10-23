@@ -3,12 +3,12 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { CagedService } from '../../services/caged.service';
 
 @Component({
-  selector: 'app-caged-responsible-form',
-  templateUrl: './caged-responsible-form.component.html',
-  styleUrls: ['./caged-responsible-form.component.scss']
+  selector: 'app-caged-worker-form',
+  templateUrl: './caged-worker-form.component.html',
+  styleUrls: ['./caged-worker-form.component.scss']
 })
 
-export class CagedResponsibleFormComponent implements OnInit {
+export class CagedWorkerFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
   title: string;
   form: FormGroup;
@@ -19,10 +19,10 @@ export class CagedResponsibleFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.title = 'Caged';
+    this.title = 'Caged Trabalhador';
     this.form = this.formBuilder.group({
       nome: new FormControl('', [Validators.required]),
-      cep: new FormControl('')
+      cep: new FormControl()
     });
 
     // Emit the form group to the father to do whatever it wishes

@@ -19,7 +19,7 @@ export class CagedCompanyFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.title = 'Caged';
+    this.title = 'Caged Empresa';
     this.form = this.formBuilder.group({
       nome: new FormControl('', [Validators.required]),
       cep: new FormControl('')

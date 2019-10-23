@@ -1,5 +1,4 @@
-import { ICagedCompanyRequest } from './../../core/forms/caged-company-form(copy 1)/caged.model';
-import { ICagedWorkerRequest } from './../../core/forms/caged-responsible-form/caged.model';
+import { ICagedWorkerRequest, ICagedCompanyRequest } from './../../core/forms/caged-responsible-form/caged.model';
 import { ICagedCompanyResponse, ICagedWorkerResponse, ICagedResponsibleRequest } from './../../core/forms/caged-worker-form/caged.model';
 import { DetranTimeLineRequest } from './../../core/forms/detran-cnh-form/detran.model';
 import { ISivecRequest } from './../../core/forms/sivec-form/sivec.model';

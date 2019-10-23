@@ -30,10 +30,4 @@ export class DetranCNHFormComponent implements OnInit {
     this.formReady.emit(this.form);
   }
 
-  search(detranRequest: IDetranCNHRequest) {
-    this.detranService.getFormData(detranRequest).subscribe(
-      res => console.log(res)
-    )
-  }
-
 }

@@ -1,9 +1,9 @@
-import { ICagedWorkerRequest, ICagedWorkerResponse, ICagedCompanyRequest, ICagedCompanyResponse, ICagedResponsibleRequest, ICagedResponsibleResponse } from './../forms/caged-form/caged.model';
 import { environment } from './../../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injector, Injectable } from '@angular/core';
 import { BaseResourceService } from './base-resource.service';
+import { ICagedWorkerResponse, ICagedWorkerRequest, ICagedCompanyResponse, ICagedCompanyRequest, ICagedResponsibleResponse, ICagedResponsibleRequest } from '../forms/caged-responsible-form/caged.model';
 
 @Injectable()
 export class CagedService implements BaseResourceService  {

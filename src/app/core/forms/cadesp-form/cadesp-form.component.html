@@ -1,6 +1,6 @@
 <h4>{{ title }}</h4>
 
- <form [formGroup]="form" (ngSubmit)="search(form.value)">
+  <form [formGroup]="form" (ngSubmit)="search(form.value)">
     <mat-form-field class="block" class="example-full-width">
       <input matInput placeholder="CNPJ*" formControlName="cep">
     </mat-form-field>

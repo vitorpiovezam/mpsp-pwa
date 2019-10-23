@@ -25,7 +25,6 @@ export class CadespFormComponent implements OnInit {
       cnpj: new FormControl('', [Validators.required]),
     });
 
-    // Emit the form group to the father to do whatever it wishes
     this.formReady.emit(this.form);
   }
 
