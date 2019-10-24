@@ -7,12 +7,10 @@ import { BaseResourceService } from './base-resource.service';
 
 @Injectable()
 export class CadespService implements BaseResourceService  {
-  http: HttpClient;
-
-  constructor(http: HttpClient){ }
+  constructor(private http: HttpClient){ }
 
   getFormData(cadespRequest: ICadespRequest): Observable<ICadespResponse> {
-    return this.http.post<ICadespResponse>(`${environment.apiUrl}`, cadespRequest);
+    return this.http.post<ICadespResponse>(`${environment.apiUrl}/cadesp`, cadespRequest);
   }
 
 }

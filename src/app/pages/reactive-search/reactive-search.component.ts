@@ -1,4 +1,4 @@
-import { ICagedWorkerRequest, ICagedCompanyRequest } from './../../core/forms/caged-responsible-form/caged.model';
+import { ICagedWorkerRequest, ICagedCompanyRequest, ICagedResponsibleResponse } from './../../core/forms/caged-responsible-form/caged.model';
 import { ICagedCompanyResponse, ICagedWorkerResponse, ICagedResponsibleRequest } from './../../core/forms/caged-worker-form/caged.model';
 import { DetranTimeLineRequest } from './../../core/forms/detran-cnh-form/detran.model';
 import { ISivecRequest } from './../../core/forms/sivec-form/sivec.model';
@@ -31,7 +31,7 @@ import { SivecService } from 'src/app/core/services/sivec.service';
   selector: 'app-reactive-search',
   templateUrl: './reactive-search.component.html',
   styleUrls: ['./reactive-search.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
   encapsulation: ViewEncapsulation.None
 })  
 export class ReactiveSearchComponent implements OnInit {
@@ -39,10 +39,10 @@ export class ReactiveSearchComponent implements OnInit {
   isValid: boolean = false;
 
   arisp = false;
-  arpenp = false;
-  cadesp = false;
-  cagedCompany = false;
-  cagedResponsible = false;
+  arpenp = false; // crash
+  cadesp = false; // crash
+  cagedCompany = false; 
+  cagedResponsible = true;
   cagedWorker = false;
   censec = false;
   detranCnh = false;
@@ -53,11 +53,26 @@ export class ReactiveSearchComponent implements OnInit {
   sitel = false;
   sivec = false;
 
+  arispLoading = false;
+  arpenpLoading = false;
+  cadespLoading = false;
+  cagedCompanyLoading = false;
+  cagedResponsibleLoading = false;
+  cagedWorkerLoading = false;
+  censecLoading = false;
+  detranCnhLoading = false;
+  detranTimeLineLoading = false;
+  detranVehicleLineLoading = false;
+  infocrimLoading = false;
+  jucespLoading = false;
+  sitelLoading = false;
+  sivecLoading = false;
+
   arispResponse: IArispResponse;
   arpenpResponse: IArpenpResponse;
   cadespResponse: ICadespResponse;
   cagedCompanyResponse: ICagedCompanyResponse;
-  cagedResponsibleResponse: ICagedResponsibleRequest;
+  cagedResponsibleResponse: ICagedResponsibleResponse;
   cagedWorkerResponse: ICagedWorkerResponse;
   censecResponse: ICensecResponse;
   detranCNHResponse: IDetranCNHResponse;
@@ -99,85 +114,171 @@ export class ReactiveSearchComponent implements OnInit {
     this.form.removeControl(name);
   }
 
-  isEmpty(obj) {
-    for(var key in obj) {
-        if(obj.hasOwnProperty(key))
-            return false;
-    }
-    return true;
-}
+  isEmpty() {
+    return (
+    this.arisp ||
+    this.arpenp ||
+    this.cadesp ||
+    this.cagedCompany ||
+    this.cagedResponsible ||
+    this.cagedWorker ||
+    this.censec ||
+    this.detranCnh ||
+    this.detranTimeLine ||
+    this.detranVehicleLine ||
+    this.infocrim ||
+    this.jucesp ||
+    this.sitel ||
+    this.sivec
+    );
+  }
 
-  search() {
+  isLoading() {
+    return (
+      this.arispLoading ||
+      this.arpenpLoading ||
+      this.cadespLoading ||
+      this.cagedCompanyLoading ||
+      this.cagedResponsibleLoading ||
+      this.cagedWorkerLoading ||
+      this.censecLoading ||
+      this.detranCnhLoading ||
+      this.detranTimeLineLoading ||
+      this.detranVehicleLineLoading ||
+      this.infocrimLoading ||
+      this.jucespLoading ||
+      this.sitelLoading ||
+      this.sivecLoading
+      );
+  }
+
+  search(entries: {}) {
     const formValues = Object.entries(this.form.value);
 
     for (const [i, form] of formValues.entries()){
       if (form[0] === 'arisp') {
-        const arispRequest = form[i] as IArispRequest; 
-        this.arispService.getFormData(arispRequest).subscribe(x => console.log(x))
+        const arispRequest = form[1] as IArispRequest; 
+        this.arispLoading = true;
+        this.arispService.getFormData(arispRequest).subscribe(x => {
+          this.arispLoading = false
+          this.arispResponse = x
+        });
       }
 
       if (form[0] === 'arpenp') {
-        const arpenpRequest = form[i] as IArpenpRequest; 
-        this.arpenpService.getFormData(arpenpRequest).subscribe(x => console.log(x))
+        const arpenpRequest = form[1] as IArpenpRequest; 
+        this.arpenpLoading = true;
+        this.arpenpService.getFormData(arpenpRequest).subscribe(x => {
+          this.arpenpLoading = false
+          this.arpenpResponse = x
+        })
       }
 
       if (form[0] === 'cadesp') {
-        const cadespRequest = form[i] as ICadespRequest; 
-        this.arispService.getFormData(cadespRequest).subscribe(x => console.log(x))
+        const cadespRequest = form[1] as ICadespRequest; 
+        this.cadespLoading = true;
+        this.cadespService.getFormData(cadespRequest).subscribe(x => {
+          this.cadespLoading = false
+          this.cadespResponse = x
+        })
       }
 
       if (form[0] === 'cagedWorker') {
-        const cagedWorkerRequest = form[i] as ICagedWorkerRequest; 
-        this.cagedService.getWorkerData(cagedWorkerRequest).subscribe(x => console.log(x))
+        const cagedWorkerRequest = form[1] as ICagedWorkerRequest; 
+        this.cagedWorkerLoading = true;
+        this.cagedService.getWorkerData(cagedWorkerRequest).subscribe(x => {
+          this.cagedWorkerLoading = false
+          this.cagedWorkerResponse = x
+        })
       }
 
       if (form[0] === 'cagedResponsible') {
-        const cagedRequest = form[i] as ICagedResponsibleRequest; 
-        this.cagedService.getResponsibleData(cagedRequest).subscribe(x => console.log(x))
+        const cagedRequest = form[1] as ICagedResponsibleRequest; 
+        this.cagedResponsibleLoading = true;
+        this.cagedService.getResponsibleData(cagedRequest).subscribe(x => {
+          this.cagedResponsibleLoading = false
+          this.cagedResponsibleResponse = x
+        })
       }
 
       if (form[0] === 'cagedCompany') {
-        const cagedRequest = form[i] as ICagedCompanyRequest;
-        this.cagedService.getCompanyData(cagedRequest).subscribe(x => console.log(x))
+        const cagedRequest = form[1] as ICagedCompanyRequest;
+        this.cagedCompanyLoading = true;
+        this.cagedService.getCompanyData(cagedRequest).subscribe(x => {
+          this.cagedCompanyLoading = false
+          this.cagedCompanyResponse = x
+        })
       }
 
       if (form[0] === 'censec') {
-        const censecRequest = form[i] as ICensecRequest; 
-        this.censecService.getFormData(censecRequest).subscribe(x => console.log(x))
+        const censecRequest = form[1] as ICensecRequest; 
+        this.censecLoading = true;
+        this.censecService.getFormData(censecRequest).subscribe(x => {
+          this.censecLoading = false
+          this.censecResponse = x
+        })
       }
 
       if (form[0] === 'detranCnh') {
-        const detranCnhRequest = form[i] as IDetranCNHRequest; 
-        this.detranService.getCnhData(detranCnhRequest).subscribe(x => console.log(x))
+        const detranCnhRequest = form[1] as IDetranCNHRequest; 
+        this.detranCnhLoading = true;
+        this.detranService.getCnhData(detranCnhRequest).subscribe(x => {
+          this.detranCnhLoading = false
+          this.detranCNHResponse = x
+        })
       }
 
       if (form[0] === 'detranTimeLine') {
-        const detranTimeLineRequest = form[i] as IDetranTimeLineRequest; 
-        this.detranService.getTimelineData(detranTimeLineRequest).subscribe(x => console.log(x))
+        const detranTimeLineRequest = form[1] as IDetranTimeLineRequest; 
+        this.detranTimeLineLoading = true;
+        this.detranService.getTimelineData(detranTimeLineRequest).subscribe(x => {
+          this.detranTimeLineLoading = false
+          this.detranTimeLineResponse = x
+        })
       }
 
       if (form[0] === 'detranVehicleLine') {
-        const detranVehicleRequest = form[i] as IDetranVehicleRequest;
-        this.detranService.getVehicleData(detranVehicleRequest).subscribe(x => console.log(x))
+        const detranVehicleRequest = form[1] as IDetranVehicleRequest;
+        this.detranVehicleLineLoading = true;
+        this.detranService.getVehicleData(detranVehicleRequest).subscribe(x => {
+          this.detranVehicleLineLoading = false
+          this.detranVehicleResponse = x
+        })
       }
 
       if (form[0] === 'infocrim') {
-        this.infocrimService.getFormData().subscribe(x => console.log(x))
+        this.infocrimLoading = true;
+        this.infocrimService.getFormData().subscribe(x => {
+          this.infocrimLoading = false;
+          this.infocrimResponse = x
+        })
       }
 
       if (form[0] === 'jucesp') {
-        const jucespRequest = form[i] as IJucespRequest; 
-        this.jucespService.getFormData(jucespRequest).subscribe(x => console.log(x))
+        const jucespRequest = form[1] as IJucespRequest; 
+        this.jucespLoading = true;
+        this.jucespService.getFormData(jucespRequest).subscribe(x => {
+          this.jucespLoading = false
+          this.jucespResponse = x
+        })
       }
 
       if (form[0] === 'sitel') {
-        const sitelRequest = form[i] as ISitelRequest; 
-        this.sitelService.getFormData(sitelRequest).subscribe(x => console.log(x))
+        const sitelRequest = form[1] as ISitelRequest; 
+        this.sitelLoading = true;
+        this.sitelService.getFormData(sitelRequest).subscribe(x => {
+          this.sitelLoading = false
+          this.sitelResponse = x
+        })
       }
 
       if (form[0] === 'sivec') {
-        const sivecRequest = form[i] as ISivecRequest; 
-        this.sivecService.getFormData(sivecRequest).subscribe(x => console.log(x))
+        const sivecRequest = form[1] as ISivecRequest; 
+        this.sivecLoading = true;
+        this.sivecService.getFormData(sivecRequest).subscribe(x => {
+          this.sivecLoading = false
+          this.sivecResponse = x
+        })
       }
     }
   }

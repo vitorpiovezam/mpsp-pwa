@@ -4,7 +4,7 @@
   <mat-form-field class="block">
     <mat-label>Tipo de Pesquisa</mat-label>
     <mat-select formControlName="searchType" name="searchType">
-      <mat-option *ngFor="let search of searchType; let i = index" [value]="i">
+      <mat-option *ngFor="let search of searchType; let i = index" [value]="i+1">
         {{ search }}
       </mat-option>
     </mat-select>
@@ -13,7 +13,7 @@
   <mat-form-field class="block">
     <mat-label>Tipo de Pesquisa</mat-label>
     <mat-select formControlName="personType">
-      <mat-option *ngFor="let person of personType; let i = index" [value]="i">
+      <mat-option *ngFor="let person of personType; let i = index" [value]="i+1">
         {{ person }}
       </mat-option>
     </mat-select>

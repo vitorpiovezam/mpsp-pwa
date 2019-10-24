@@ -7,23 +7,21 @@ import { ICagedWorkerResponse, ICagedWorkerRequest, ICagedCompanyResponse, ICage
 
 @Injectable()
 export class CagedService implements BaseResourceService  {
-  http: HttpClient;
-
-  constructor(http: HttpClient){ }
+  constructor(private http: HttpClient){ }
 
   getFormData() {
     
   }
 
   getWorkerData(cagedRequest: ICagedWorkerRequest): Observable<ICagedWorkerResponse> {
-    return this.http.post<ICagedWorkerResponse>(`${environment.apiUrl}/cagedWorker`, { cagedRequest }, { headers: { relatoryId: '1'}});
+    return this.http.post<ICagedWorkerResponse>(`${environment.apiUrl}/cagedWorker`, cagedRequest);
   }
 
   getCompanyData(cagedRequest: ICagedCompanyRequest): Observable<ICagedCompanyResponse> {
-    return this.http.post<ICagedCompanyResponse>(`${environment.apiUrl}/cagedCompany`, { cagedRequest }, { headers: { relatoryId: '1'}});
+    return this.http.post<ICagedCompanyResponse>(`${environment.apiUrl}/cagedCompany`, cagedRequest);
   }
 
   getResponsibleData(cagedRequest: ICagedResponsibleRequest): Observable<ICagedResponsibleResponse> {
-    return this.http.post<ICagedResponsibleResponse>(`${environment.apiUrl}/cagedResponsible`, { cagedRequest }, { headers: { relatoryId: '1'}});
+    return this.http.post<ICagedResponsibleResponse>(`${environment.apiUrl}/cagedResponsible`, cagedRequest);
   }
 }

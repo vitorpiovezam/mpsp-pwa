@@ -7,9 +7,7 @@ import { BaseResourceService } from './base-resource.service';
 
 @Injectable()
 export class CensecService implements BaseResourceService {
-  http: HttpClient;
-
-  constructor(http: HttpClient){ }
+  constructor(private http: HttpClient){ }
 
   getFormData(censecRequest: ICensecRequest): Observable<ICensecResponse> {
     return this.http.post<ICensecResponse>(`${environment.apiUrl}`, censecRequest);

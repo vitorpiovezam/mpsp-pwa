@@ -7,9 +7,8 @@ import { BaseResourceService } from './base-resource.service';
 
 @Injectable()
 export class SivecService implements BaseResourceService{
-  http: HttpClient;
 
-  constructor(http: HttpClient){ }
+  constructor(private http: HttpClient){ }
 
   getFormData(sivecRequest: ISivecRequest): Observable<ISivecResponse> {
     return this.http.post<ISivecResponse>(`${environment.apiUrl}`, sivecRequest);

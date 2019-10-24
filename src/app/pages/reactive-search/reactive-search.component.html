@@ -106,7 +106,7 @@
           <app-sivec-form *ngIf="sivec" (formReady)="addControl('sivec', $event)">></app-sivec-form>
         </div>
 
-        <button (click)="search()" *ngIf="!isEmpty(form.value)" [disabled]=" this.form.status === 'INVALID'" mat-button color="primary">Enviar</button>
+        <button (click)="search()" *ngIf="isEmpty(form.value)" [disabled]="(this.form.status === 'INVALID') || isLoading()" mat-button color="primary">Enviar</button>
       </div>
     </div>
 
@@ -115,7 +115,133 @@
         <h4> Pesquisas </h4>
 
         <div class="result">
-
+          <div class="response" *ngIf="arisp">
+            <h3>Arisp</h3>
+            <div class="loading">
+              <mat-spinner  class="progressSpinner">
+              </mat-spinner>
+            </div>
+            {{ arispResponse | json }}
+          </div> 
+          <div class="response" *ngIf="arpenp">
+            <div class="loading" *ngIf="arpenpLoading">
+              <mat-progress-spinner
+                [mode]="determinate"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ arpenpResponse | json }}
+          </div> 
+          <div class="response" *ngIf="cadesp">
+            <div class="loading" *ngIf="cadespLoading">
+              <mat-progress-spinner
+                [mode]="determinate"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ cadespResponse | json }}
+          </div> 
+          <div class="response" *ngIf="cagedCompany">
+            <h3>Caged Responsavel</h3>
+            <div class="loading" *ngIf="cagedCompanyLoading">
+              <mat-progress-spinner
+                [mode]="Indeterminate"
+                [value]="50"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ cagedCompanyResponse | json }}
+          </div> 
+          <div class="response" *ngIf="cagedResponsible">
+            <div class="loading" *ngIf="cagedResponsibleLoading">
+              <mat-progress-spinner
+                [mode]="determinate"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ cagedResponsibleResponse | json }}
+          </div> 
+          <div class="response" *ngIf="cagedWorker">
+            <div class="loading" *ngIf="cagedWorkerLoading">
+              <mat-progress-spinner
+                [mode]="determinate"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ cagedWorkerResponse | json }}
+          </div> 
+          <div class="response" *ngIf="censec">
+            <div class="loading" *ngIf="censecLoading">
+              <mat-progress-spinner
+                [mode]="determinate"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ censecResponse | json }}
+          </div> 
+          <div class="response" *ngIf="detranCnh">
+            <div class="loading" *ngIf="detranCnhLoading">
+              <mat-progress-spinner
+                [mode]="determinate"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ detranCnhResponse | json }}
+          </div> 
+          <div class="response" *ngIf="detranTimeLine">
+            <div class="loading" *ngIf="detranTimeLineLoading">
+              <mat-progress-spinner
+                [mode]="determinate"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ detranTimeLineResponse | json }}
+          </div> 
+          <div class="response" *ngIf="detranVehicleLine">
+            <div class="loading" *ngIf="detranVehicleLineLoading">
+              <mat-progress-spinner
+                [mode]="determinate"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ detranVehicleLineResponse | json }}
+          </div> 
+          <div class="response" *ngIf="infocrim">
+            <div class="loading" *ngIf="infocrimLoading">
+              <mat-progress-spinner
+                [mode]="determinate"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ infocrimResponse | json }}
+          </div> 
+          <div class="response" *ngIf="jucesp">
+            <div class="loading" *ngIf="jucespLoading">
+              <mat-progress-spinner
+                [mode]="determinate"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ jucespResponse | json }}
+          </div> 
+          <div class="response" *ngIf="sitel">
+            <div class="loading" *ngIf="sitelLoading">
+              <mat-progress-spinner
+                [mode]="determinate"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ sitelResponse | json }}
+          </div> 
+          <div class="response" *ngIf="sivec">
+            <div class="loading" *ngIf="sivecLoading">
+              <mat-progress-spinner
+                [mode]="determinate"
+                >
+              </mat-progress-spinner>
+            </div>
+            {{ sivecResponse | json }}
+          </div> 
         </div>
       </div>
     </div>

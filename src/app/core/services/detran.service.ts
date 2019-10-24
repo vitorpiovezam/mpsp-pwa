@@ -10,9 +10,7 @@ import { IDetranVehicleRequest, IDetranTimeLineRequest, IDetranVehicleResponse }
 
 @Injectable()
 export class DetranService implements BaseResourceService {
-  http: HttpClient;
-
-  constructor(http: HttpClient){ }
+  constructor(private http: HttpClient){ }
 
   getFormData(foo: any) { }
 

@@ -7,9 +7,7 @@ import { BaseResourceService } from './base-resource.service';
 
 @Injectable()
 export class InfocrimService implements BaseResourceService {
-  http: HttpClient;
-
-  constructor(http: HttpClient){ }
+  constructor(private http: HttpClient){ }
 
   getFormData(): Observable<IInfocrimResponse> {
     return this.http.get<IInfocrimResponse>(`${environment.apiUrl}`);

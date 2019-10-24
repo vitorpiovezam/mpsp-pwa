@@ -12,6 +12,13 @@ export class CagedResponsibleFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
   title: string;
   form: FormGroup;
+  searchType: string[] = [
+    'CNPJ',
+    'CEI',
+    'CPF',
+    'Razão Social/Nome',
+    'CREA'
+  ];
 
   constructor(
     private cagedService: CagedService,

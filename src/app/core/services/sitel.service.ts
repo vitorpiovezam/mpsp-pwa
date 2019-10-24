@@ -7,9 +7,7 @@ import { BaseResourceService } from './base-resource.service';
 
 @Injectable()
 export class SitelService implements BaseResourceService{
-  http: HttpClient;
-
-  constructor(http: HttpClient){ }
+  constructor(private http: HttpClient){ }
 
   getFormData(sitelRequest: ISitelRequest): Observable<ISitelResponse> {
     return this.http.post<ISitelResponse>(`${environment.apiUrl}`, sitelRequest);

@@ -24,7 +24,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ReactiveSearchComponent } from './pages/reactive-search/reactive-search.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -47,7 +47,6 @@ import { CagedCompanyFormComponent } from './core/forms/caged-company-form/caged
     HomeComponent,
     MySearchesComponent,
     ReactiveSearchComponent,
-
     ArispFormComponent,
     ArpenpFormComponent,
     CadespFormComponent,
@@ -62,13 +61,16 @@ import { CagedCompanyFormComponent } from './core/forms/caged-company-form/caged
     JucespFormComponent,
     SitelFormComponent,
     SivecFormComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    MatProgressSpinnerModule,
     MatTabsModule,
     MatToolbarModule,
     MatCheckboxModule,

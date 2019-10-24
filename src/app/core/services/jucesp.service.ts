@@ -7,9 +7,7 @@ import { BaseResourceService } from './base-resource.service';
 
 @Injectable()
 export class JucespService implements BaseResourceService {
-  http: HttpClient;
-
-  constructor(http: HttpClient){ }
+  constructor(private http: HttpClient){ }
 
   getFormData(jucespRequest: IJucespRequest): Observable<IJucespResponse> {
     return this.http.post<IJucespResponse>(`${environment.apiUrl}`, jucespRequest);

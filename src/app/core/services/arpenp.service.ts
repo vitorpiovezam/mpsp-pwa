@@ -7,13 +7,12 @@ import { BaseResourceService } from './base-resource.service';
 
 @Injectable()
 export class ArpenpService implements BaseResourceService  {
-  http: HttpClient;
 
-  constructor(http: HttpClient){ 
+  constructor(private http: HttpClient){ 
   }
 
   getFormData(arpenpRequest: IArpenpRequest): Observable<IArpenpResponse> {
-    return this.http.get<IArpenpResponse>(`${environment.apiUrl}/${arpenpRequest.placeId}`);
+    return this.http.post<IArpenpResponse>(`${environment.apiUrl}/arpensp`, arpenpRequest);
   }
 
 }
