@@ -1,7 +1,5 @@
-<div class="content">
-  <div *ngIf="isLoading">
-    <mat-spinner></mat-spinner>
-  </div>
+<div *ngIf="isLoading" class="content">
+  <mat-spinner></mat-spinner>
 </div>
 
 <div class="container" *ngIf="!isLoading">

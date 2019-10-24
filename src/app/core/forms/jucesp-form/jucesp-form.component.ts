@@ -29,10 +29,4 @@ export class JucespFormComponent implements OnInit {
     this.formReady.emit(this.form);
   }
 
-  search(jucespRequest: IJucespRequest) {
-    this.jucespService.getFormData(jucespRequest).subscribe(
-      res => console.log(res)
-    )
-  }
-
 }

@@ -9,9 +9,11 @@ import { BaseResourceService } from './base-resource.service';
 export class SitelService implements BaseResourceService{
   constructor(private http: HttpClient){ }
 
-  getFormData(sitelRequest: ISitelRequest): Observable<ISitelResponse> {
+  getFormData(sitelRequest: ISitelRequest, reportId: string): Observable<ISitelResponse> {
     console.log(sitelRequest)
-    return this.http.post<ISitelResponse>(`${environment.apiUrl}/siel`, sitelRequest);
+    return this.http.post<ISitelResponse>(`${environment.apiUrl}/siel`, sitelRequest, {
+      headers: { 'reportId': reportId }
+    });
   }
 
 }

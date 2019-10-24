@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-login',
   template: `
+  <div class="container">
   <mat-card>
     <mat-card-title>MPSP-PWA</mat-card-title>
   <mat-card-content>
@@ -27,6 +28,7 @@ import { Component, OnInit } from '@angular/core';
     </form>
   </mat-card-content>
 </mat-card>
+  </div>
 `,
   styles: [
     `

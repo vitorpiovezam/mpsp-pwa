@@ -35,10 +35,4 @@ export class SivecFormComponent implements OnInit {
     this.formReady.emit(this.form);
   }
 
-  search(sivecRequest: ISivecRequest) {
-    this.sivecService.getFormData(sivecRequest).subscribe(
-      res => console.log(res)
-    )
-  }
-
 }

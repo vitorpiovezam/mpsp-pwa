@@ -9,8 +9,10 @@ import { BaseResourceService } from './base-resource.service';
 export class CadespService implements BaseResourceService  {
   constructor(private http: HttpClient){ }
 
-  getFormData(cadespRequest: ICadespRequest): Observable<ICadespResponse> {
-    return this.http.post<ICadespResponse>(`${environment.apiUrl}/cadesp`, cadespRequest);
+  getFormData(cadespRequest: ICadespRequest,reportId: string): Observable<ICadespResponse> {
+    return this.http.post<ICadespResponse>(`${environment.apiUrl}/cadesp`, cadespRequest, {
+      headers: { 'reportId': reportId }
+    });
   }
 
 }

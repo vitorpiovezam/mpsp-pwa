@@ -9,8 +9,10 @@ import { BaseResourceService } from './base-resource.service';
 export class CensecService implements BaseResourceService {
   constructor(private http: HttpClient){ }
 
-  getFormData(censecRequest: ICensecRequest): Observable<ICensecResponse> {
-    return this.http.post<ICensecResponse>(`${environment.apiUrl}/censec`, censecRequest);
+  getFormData(censecRequest: ICensecRequest, reportId: string): Observable<ICensecResponse> {
+    return this.http.post<ICensecResponse>(`${environment.apiUrl}/censec`, censecRequest, {
+      headers: { 'reportId': reportId }
+    });
   }
 
 }

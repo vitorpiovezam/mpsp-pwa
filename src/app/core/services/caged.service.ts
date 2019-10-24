@@ -13,15 +13,21 @@ export class CagedService implements BaseResourceService  {
     
   }
 
-  getWorkerData(cagedRequest: ICagedWorkerRequest): Observable<ICagedWorkerResponse> {
-    return this.http.post<ICagedWorkerResponse>(`${environment.apiUrl}/cagedWorker`, cagedRequest);
+  getWorkerData(cagedRequest: ICagedWorkerRequest, reportId: string): Observable<ICagedWorkerResponse> {
+    return this.http.post<ICagedWorkerResponse>(`${environment.apiUrl}/cagedWorker`, cagedRequest, {
+      headers: { 'reportId': reportId }
+    });
   }
 
-  getCompanyData(cagedRequest: ICagedCompanyRequest): Observable<ICagedCompanyResponse> {
-    return this.http.post<ICagedCompanyResponse>(`${environment.apiUrl}/cagedCompany`, cagedRequest);
+  getCompanyData(cagedRequest: ICagedCompanyRequest, reportId: string): Observable<ICagedCompanyResponse> {
+    return this.http.post<ICagedCompanyResponse>(`${environment.apiUrl}/cagedCompany`, cagedRequest, {
+      headers: { 'reportId': reportId }
+    });
   }
 
-  getResponsibleData(cagedRequest: ICagedResponsibleRequest): Observable<ICagedResponsibleResponse> {
-    return this.http.post<ICagedResponsibleResponse>(`${environment.apiUrl}/cagedResponsible`, cagedRequest);
+  getResponsibleData(cagedRequest: ICagedResponsibleRequest, reportId: string): Observable<ICagedResponsibleResponse> {
+    return this.http.post<ICagedResponsibleResponse>(`${environment.apiUrl}/cagedResponsible`, cagedRequest, {
+      headers: { 'reportId': reportId }
+    });
   }
 }

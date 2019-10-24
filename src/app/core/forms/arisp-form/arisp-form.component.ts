@@ -39,10 +39,4 @@ export class ArispFormComponent implements OnInit {
     this.formReady.emit(this.form);
   }
 
-  search(arispRequest: IArispRequest) {
-    this.arispService.getFormData(arispRequest).subscribe(
-      res => console.log(res)
-    )
-  }
-
 }

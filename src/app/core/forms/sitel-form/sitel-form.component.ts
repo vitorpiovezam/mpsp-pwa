@@ -38,11 +38,4 @@ export class SitelFormComponent implements OnInit {
     // Emit the form group to the father to do whatever it wishes
     this.formReady.emit(this.form);
   }
-
-  search(sitelRequest: ISitelRequest) {
-    this.sitelService.getFormData(sitelRequest).subscribe(
-      res => console.log(res)
-    )
-  }
-
 }

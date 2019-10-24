@@ -29,11 +29,4 @@ export class ArpenpFormComponent implements OnInit {
     // Emit the form group to the father to do whatever it wishes
     this.formReady.emit(this.form);
   }
-
-  search(arpenpRequest: IArpenpRequest) {
-    this.arpenpService.getFormData(arpenpRequest).subscribe(
-      res => console.log(res)
-    )
-  }
-
 }

@@ -9,8 +9,10 @@ import { BaseResourceService } from './base-resource.service';
 export class JucespService implements BaseResourceService {
   constructor(private http: HttpClient){ }
 
-  getFormData(jucespRequest: IJucespRequest): Observable<IJucespResponse> {
-    return this.http.post<IJucespResponse>(`${environment.apiUrl}/jucesp`, jucespRequest);
+  getFormData(jucespRequest: IJucespRequest, reportId: string): Observable<IJucespResponse> {
+    return this.http.post<IJucespResponse>(`${environment.apiUrl}/jucesp`, {
+      headers: { 'reportId': reportId }
+    });
   }
 
 }

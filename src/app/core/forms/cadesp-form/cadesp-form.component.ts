@@ -28,10 +28,4 @@ export class CadespFormComponent implements OnInit {
     this.formReady.emit(this.form);
   }
 
-  search(cadespRequest: ICadespRequest) {
-    this.cadespService.getFormData(cadespRequest).subscribe(
-      res => console.log(res)
-    )
-  }
-
 }
