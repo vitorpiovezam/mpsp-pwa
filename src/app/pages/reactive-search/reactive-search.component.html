@@ -117,7 +117,7 @@
         <div class="result">
           <div class="response" *ngIf="arisp">
             <h3>arisp</h3>
-            <div class="loading">
+            <div class="loading" *ngIf="arispLoading">
               <mat-spinner  class="progressSpinner">
               </mat-spinner>
             </div>
