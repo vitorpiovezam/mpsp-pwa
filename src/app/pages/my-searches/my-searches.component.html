@@ -1,7 +1,20 @@
 <div class="content">
-  <div class="row">
-    <h2>Você não tem relatórios gerados :(</h2>
-    <button mat-button color="primary" [routerLink]="[ '/search' ]">Realizar consultas</button>
+  <div *ngIf="isLoading">
+    <mat-spinner
+      [mode]="indeterminate">
+    </mat-spinner>
   </div>
+  <div class="row" *ngIf="!isLoading">
+
+    <div *ngIf="reports.lenght === 0"> 
+      <h2>Você não tem relatórios gerados :(</h2>
+      <button mat-button color="primary" [routerLink]="[ '/search' ]">Realizar consultas</button>
+    </div>
+
+    <div *ngFor="let report of reports">
+      <p>{{ report | json}}</p>
+    </div>
   
+  
+  </div>
 </div>

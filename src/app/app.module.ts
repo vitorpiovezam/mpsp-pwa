@@ -1,3 +1,4 @@
+import { ReportService } from './core/services/report.service';
 import { CagedWorkerFormComponent } from './core/forms/caged-worker-form/caged-worker-form.component';
 import { CagedResponsibleFormComponent } from './core/forms/caged-responsible-form/caged-responsible-form.component';
 import { DetranVehicleFormComponent } from './core/forms/detran-vehicle-form/detran-vehicle-form.component';
@@ -96,7 +97,8 @@ import { CagedCompanyFormComponent } from './core/forms/caged-company-form/caged
     InfocrimService,
     JucespService,
     SitelService,
-    SivecService
+    SivecService,
+    ReportService
   ],
   bootstrap: [AppComponent]
 })

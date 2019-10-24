@@ -1,3 +1,4 @@
+import { ReportService } from './../../core/services/report.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-searches.component.scss']
 })
 export class MySearchesComponent implements OnInit {
+  reports: any;
+  isLoading = true;
 
-  constructor() { }
+  constructor(private reportService: ReportService) { }
 
   ngOnInit() {
+    this.reportService.getReports().subscribe(x => {
+      this.isLoading = false;
+      this.reports = x
+    });
   }
 
 }
