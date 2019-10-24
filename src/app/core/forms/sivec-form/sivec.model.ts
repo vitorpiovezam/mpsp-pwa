@@ -1,6 +1,5 @@
 export interface ISivecRequest{
-  term?: String,
-  searchType?: String
+  name?: String,
 }
 
 export interface IAddress {

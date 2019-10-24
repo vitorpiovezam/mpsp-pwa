@@ -1,12 +1,26 @@
 <h4>{{ title }}</h4>
 
- <form [formGroup]="form" (ngSubmit)="search(form.value)">
-    <mat-form-field class="block" class="example-full-width">
-      <input matInput placeholder="CEP*" formControlName="cep">
+<form [formGroup]="form" (ngSubmit)="search(form.value)">
+  <mat-form-field class="block" class="example-full-width">
+    <input matInput placeholder="CEP*" formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field class="block" class="example-full-width">
+    <input matInput placeholder="Nome*" formControlName="motherName">
+  </mat-form-field>
+
+  <mat-form-field class="block" class="example-full-width">
+      <input matInput placeholder="Data de Nascimento*" formControlName="birthDate">
     </mat-form-field>
 
-    <mat-form-field class="block" class="example-full-width">
-      <input matInput placeholder="Nome*" formControlName="nome">
-    </mat-form-field>
+  <mat-form-field class="block" class="example-full-width">
+    <input matInput placeholder="Documento com 12 digitos*" formControlName="documentNumber">
+  </mat-form-field>
+
+
+  <mat-form-field class="block" class="example-full-width">
+    <input matInput placeholder="Numero do Processo*" formControlName="processNumber">
+  </mat-form-field>
+
 
 </form>

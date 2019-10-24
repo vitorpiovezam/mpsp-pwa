@@ -12,6 +12,11 @@ export class InfocrimFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
   title: string;
   form: FormGroup;
+  institutions: string[] = [
+    'Policia Civil',
+    'Policia Militar',
+    'Prefeituras'
+  ]
 
   constructor(
     private infocrimService: InfocrimService,
@@ -21,18 +26,10 @@ export class InfocrimFormComponent implements OnInit {
   ngOnInit() {
     this.title = 'Infocrim';
     this.form = this.formBuilder.group({
-      nome: new FormControl('', [Validators.required]),
-      cep: new FormControl('')
+      institution: new FormControl(null, [Validators.required]),
     });
 
     // Emit the form group to the father to do whatever it wishes
     this.formReady.emit(this.form);
   }
-
-  search() {
-    this.infocrimService.getFormData().subscribe(
-      res => console.log(res)
-    )
-  }
-
 }

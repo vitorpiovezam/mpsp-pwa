@@ -11,7 +11,7 @@ import { CadespService } from './../../core/services/cadesp.service';
 import { IDetranVehicleResponse, IDetranTimeLineRequest, IDetranVehicleRequest } from './../../core/forms/detran-timeline-form/detran.model';
 import { ArispService } from './../../core/services/arisp.service';
 import { IJucespResponse, IJucespRequest } from './../../core/forms/jucesp-form/jucesp.model';
-import { IInfocrimResponse } from './../../core/forms/infocrim-form/infocrim.model';
+import { IInfocrimResponse, IInfocrimRequest } from './../../core/forms/infocrim-form/infocrim.model';
 import { ICensecResponse, ICensecRequest } from './../../core/forms/censec-form/censec.model';
 import { ICadespResponse, ICadespRequest } from './../../core/forms/cadesp-form/cadesp.model';
 import { IArpenpResponse, IArpenpRequest } from './../../core/forms/arpenp-form/arpenp.model';
@@ -39,7 +39,7 @@ export class ReactiveSearchComponent implements OnInit {
   isValid: boolean = false;
 
   arisp = false;
-  arpenp = true; // crash
+  arpenp = false;
   cadesp = false; // crash
   cagedCompany = false; 
   cagedResponsible = false;
@@ -47,8 +47,8 @@ export class ReactiveSearchComponent implements OnInit {
   censec = false;
   detranCnh = false; // crash
   detranTimeLine = false;
-  detranVehicle = false;
-  infocrim = false;
+  detranVehicle = false; // crash
+  infocrim = false; // wkhtmltopdf crash
   jucesp = false;
   sitel = false;
   sivec = false;
@@ -62,7 +62,7 @@ export class ReactiveSearchComponent implements OnInit {
   censecLoading = false;
   detranCnhLoading = false;
   detranTimeLineLoading = false;
-  detranVehicleLineLoading = false;
+  detranVehicleLoading = false;
   infocrimLoading = false;
   jucespLoading = false;
   sitelLoading = false;
@@ -144,7 +144,7 @@ export class ReactiveSearchComponent implements OnInit {
       this.censecLoading ||
       this.detranCnhLoading ||
       this.detranTimeLineLoading ||
-      this.detranVehicleLineLoading ||
+      this.detranVehicleLoading ||
       this.infocrimLoading ||
       this.jucespLoading ||
       this.sitelLoading ||
@@ -239,16 +239,17 @@ export class ReactiveSearchComponent implements OnInit {
 
       if (form[0] === 'detranVehicle') {
         const detranVehicleRequest = form[1] as IDetranVehicleRequest;
-        this.detranVehicleLineLoading = true;
+        this.detranVehicleLoading = true;
         this.detranService.getVehicleData(detranVehicleRequest).subscribe(x => {
-          this.detranVehicleLineLoading = false
+          this.detranVehicleLoading = false
           this.detranVehicleResponse = x
         })
       }
 
       if (form[0] === 'infocrim') {
+        const infocrimRequest = form[1] as IInfocrimRequest; 
         this.infocrimLoading = true;
-        this.infocrimService.getFormData().subscribe(x => {
+        this.infocrimService.getFormData(infocrimRequest).subscribe(x => {
           this.infocrimLoading = false;
           this.infocrimResponse = x
         })

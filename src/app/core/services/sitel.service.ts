@@ -10,7 +10,8 @@ export class SitelService implements BaseResourceService{
   constructor(private http: HttpClient){ }
 
   getFormData(sitelRequest: ISitelRequest): Observable<ISitelResponse> {
-    return this.http.post<ISitelResponse>(`${environment.apiUrl}`, sitelRequest);
+    console.log(sitelRequest)
+    return this.http.post<ISitelResponse>(`${environment.apiUrl}/siel`, sitelRequest);
   }
 
 }

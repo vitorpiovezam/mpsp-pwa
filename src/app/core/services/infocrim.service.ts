@@ -1,3 +1,4 @@
+import { IInfocrimRequest } from './../forms/infocrim-form/infocrim.model';
 import { environment } from './../../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -9,8 +10,9 @@ import { BaseResourceService } from './base-resource.service';
 export class InfocrimService implements BaseResourceService {
   constructor(private http: HttpClient){ }
 
-  getFormData(): Observable<IInfocrimResponse> {
-    return this.http.get<IInfocrimResponse>(`${environment.apiUrl}`);
+  getFormData(infocrimRequest: IInfocrimRequest): Observable<IInfocrimResponse> {
+    console.log(infocrimRequest)
+    return this.http.post<IInfocrimResponse>(`${environment.apiUrl}/infocrim`, infocrimRequest);
   }
 
 }
