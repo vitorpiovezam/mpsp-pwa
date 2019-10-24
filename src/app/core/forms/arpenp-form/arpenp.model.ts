@@ -5,5 +5,9 @@ export interface IArpenpRequest {
 }
 
 export interface IArpenpResponse {
-  foo: string;
+  spouse1OldName: String,
+  spouse1NewName: String,
+  spouse21OldName: String,
+  spouse21NewName: String,
+  marriageDate: String
 }

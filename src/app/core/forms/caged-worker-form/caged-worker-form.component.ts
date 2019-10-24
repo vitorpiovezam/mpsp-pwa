@@ -12,7 +12,11 @@ export class CagedWorkerFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
   title: string;
   form: FormGroup;
-
+  searchType: string[] = [
+    'PIS/PASEP',
+    'CPF',
+    'NOME',
+  ];
   constructor(
     private cagedService: CagedService,
     private formBuilder: FormBuilder
@@ -21,8 +25,8 @@ export class CagedWorkerFormComponent implements OnInit {
   ngOnInit() {
     this.title = 'Caged Trabalhador';
     this.form = this.formBuilder.group({
-      searchType: new FormControl(0, [Validators.required]),
-      term: new FormControl('', [Validators.required])
+      searchType: new FormControl(null, [Validators.required]),
+      term: new FormControl('')
     });
 
     // Emit the form group to the father to do whatever it wishes

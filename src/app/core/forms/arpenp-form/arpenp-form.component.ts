@@ -21,7 +21,9 @@ export class ArpenpFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      cnpj: new FormControl('', [Validators.required])
+      registryType: new FormControl('', [Validators.required]),
+      processNumber: new FormControl('', [Validators.required]),
+      placeId: new FormControl('', [Validators.required])
     });
 
     // Emit the form group to the father to do whatever it wishes

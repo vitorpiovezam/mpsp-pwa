@@ -116,7 +116,7 @@
 
         <div class="result">
           <div class="response" *ngIf="arisp">
-            <h3>Arisp</h3>
+            <h3>arisp</h3>
             <div class="loading">
               <mat-spinner  class="progressSpinner">
               </mat-spinner>
@@ -124,6 +124,7 @@
             {{ arispResponse | json }}
           </div> 
           <div class="response" *ngIf="arpenp">
+            <h3>arpenp</h3>
             <div class="loading" *ngIf="arpenpLoading">
               <mat-progress-spinner
                 [mode]="determinate"
@@ -133,6 +134,7 @@
             {{ arpenpResponse | json }}
           </div> 
           <div class="response" *ngIf="cadesp">
+            <h3>cadesp</h3>
             <div class="loading" *ngIf="cadespLoading">
               <mat-progress-spinner
                 [mode]="determinate"
@@ -142,7 +144,7 @@
             {{ cadespResponse | json }}
           </div> 
           <div class="response" *ngIf="cagedCompany">
-            <h3>Caged Responsavel</h3>
+            <h3>cagedCompany</h3>
             <div class="loading" *ngIf="cagedCompanyLoading">
               <mat-progress-spinner
                 [mode]="Indeterminate"
@@ -153,6 +155,7 @@
             {{ cagedCompanyResponse | json }}
           </div> 
           <div class="response" *ngIf="cagedResponsible">
+            <h3>cagedResponsible</h3>
             <div class="loading" *ngIf="cagedResponsibleLoading">
               <mat-progress-spinner
                 [mode]="determinate"
@@ -162,6 +165,7 @@
             {{ cagedResponsibleResponse | json }}
           </div> 
           <div class="response" *ngIf="cagedWorker">
+            <h3>cagedWorker</h3>
             <div class="loading" *ngIf="cagedWorkerLoading">
               <mat-progress-spinner
                 [mode]="determinate"
@@ -171,6 +175,7 @@
             {{ cagedWorkerResponse | json }}
           </div> 
           <div class="response" *ngIf="censec">
+            <h3>censec</h3>
             <div class="loading" *ngIf="censecLoading">
               <mat-progress-spinner
                 [mode]="determinate"
@@ -180,6 +185,7 @@
             {{ censecResponse | json }}
           </div> 
           <div class="response" *ngIf="detranCnh">
+            <h3>detranCnh</h3>
             <div class="loading" *ngIf="detranCnhLoading">
               <mat-progress-spinner
                 [mode]="determinate"
@@ -189,6 +195,7 @@
             {{ detranCnhResponse | json }}
           </div> 
           <div class="response" *ngIf="detranTimeLine">
+            <h3>detranTimeLine</h3>
             <div class="loading" *ngIf="detranTimeLineLoading">
               <mat-progress-spinner
                 [mode]="determinate"
@@ -197,16 +204,18 @@
             </div>
             {{ detranTimeLineResponse | json }}
           </div> 
-          <div class="response" *ngIf="detranVehicleLine">
-            <div class="loading" *ngIf="detranVehicleLineLoading">
+          <div class="response" *ngIf="detranVehicle">
+            <h3>detranVehicle</h3>
+            <div class="loading" *ngIf="detranVehicleLoading">
               <mat-progress-spinner
                 [mode]="determinate"
                 >
               </mat-progress-spinner>
             </div>
-            {{ detranVehicleLineResponse | json }}
+            {{ detranVehicleResponse | json }}
           </div> 
           <div class="response" *ngIf="infocrim">
+            <h3>infocrim</h3>
             <div class="loading" *ngIf="infocrimLoading">
               <mat-progress-spinner
                 [mode]="determinate"
@@ -216,6 +225,7 @@
             {{ infocrimResponse | json }}
           </div> 
           <div class="response" *ngIf="jucesp">
+            <h3>jucesp</h3>
             <div class="loading" *ngIf="jucespLoading">
               <mat-progress-spinner
                 [mode]="determinate"
@@ -225,6 +235,7 @@
             {{ jucespResponse | json }}
           </div> 
           <div class="response" *ngIf="sitel">
+            <h3>sitel</h3>
             <div class="loading" *ngIf="sitelLoading">
               <mat-progress-spinner
                 [mode]="determinate"
@@ -234,6 +245,7 @@
             {{ sitelResponse | json }}
           </div> 
           <div class="response" *ngIf="sivec">
+            <h3>sivec</h3>
             <div class="loading" *ngIf="sivecLoading">
               <mat-progress-spinner
                 [mode]="determinate"

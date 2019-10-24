@@ -28,8 +28,8 @@ export class CagedResponsibleFormComponent implements OnInit {
   ngOnInit() {
     this.title = 'Caged Responsavel';
     this.form = this.formBuilder.group({
-      searchType: new FormControl(0, [Validators.required]),
-      term: new FormControl('', [Validators.required])
+      searchType: new FormControl([Validators.required]),
+      term: new FormControl('')
     });
 
     // Emit the form group to the father to do whatever it wishes

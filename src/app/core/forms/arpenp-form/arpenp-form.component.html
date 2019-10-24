@@ -1,7 +1,15 @@
 <h4>{{ title }}</h4>
 
- <form [formGroup]="form" (ngSubmit)="search(form.value)">
+<form [formGroup]="form" (ngSubmit)="search(form.value)">
     <mat-form-field class="block" class="example-full-width">
-      <input matInput placeholder="CNPJ*" formControlName="cnpj">
+      <input matInput placeholder="Tipo de registro*" formControlName="registryType">
+    </mat-form-field>
+
+    <mat-form-field class="block" class="example-full-width">
+      <input matInput placeholder="Numero de Processo*" formControlName="processNumber">
+    </mat-form-field>
+
+    <mat-form-field class="block" class="example-full-width">
+      <input matInput placeholder="Vara*" formControlName="placeId">
     </mat-form-field>
 </form>

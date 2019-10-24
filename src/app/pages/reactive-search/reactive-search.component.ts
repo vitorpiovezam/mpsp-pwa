@@ -39,15 +39,15 @@ export class ReactiveSearchComponent implements OnInit {
   isValid: boolean = false;
 
   arisp = false;
-  arpenp = false; // crash
+  arpenp = true; // crash
   cadesp = false; // crash
   cagedCompany = false; 
-  cagedResponsible = true;
+  cagedResponsible = false;
   cagedWorker = false;
   censec = false;
-  detranCnh = false;
+  detranCnh = false; // crash
   detranTimeLine = false;
-  detranVehicleLine = false;
+  detranVehicle = false;
   infocrim = false;
   jucesp = false;
   sitel = false;
@@ -125,7 +125,7 @@ export class ReactiveSearchComponent implements OnInit {
     this.censec ||
     this.detranCnh ||
     this.detranTimeLine ||
-    this.detranVehicleLine ||
+    this.detranVehicle ||
     this.infocrim ||
     this.jucesp ||
     this.sitel ||
@@ -228,7 +228,7 @@ export class ReactiveSearchComponent implements OnInit {
         })
       }
 
-      if (form[0] === 'detranTimeLine') {
+      if (form[0] === 'detranTimeline') {
         const detranTimeLineRequest = form[1] as IDetranTimeLineRequest; 
         this.detranTimeLineLoading = true;
         this.detranService.getTimelineData(detranTimeLineRequest).subscribe(x => {
@@ -237,7 +237,7 @@ export class ReactiveSearchComponent implements OnInit {
         })
       }
 
-      if (form[0] === 'detranVehicleLine') {
+      if (form[0] === 'detranVehicle') {
         const detranVehicleRequest = form[1] as IDetranVehicleRequest;
         this.detranVehicleLineLoading = true;
         this.detranService.getVehicleData(detranVehicleRequest).subscribe(x => {

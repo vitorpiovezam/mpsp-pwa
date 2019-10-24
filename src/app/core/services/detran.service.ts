@@ -15,15 +15,15 @@ export class DetranService implements BaseResourceService {
   getFormData(foo: any) { }
 
   getCnhData(detranRequest: IDetranCNHRequest): Observable<IDetranCNHResponse> {
-    return this.http.post<IDetranCNHResponse>(`${environment.apiUrl}`, detranRequest);
+    return this.http.post<IDetranCNHResponse>(`${environment.apiUrl}/detranCNH`, detranRequest);
   }
 
   getVehicleData(detranRequest: IDetranVehicleRequest): Observable<IDetranVehicleResponse> {
-    return this.http.post<IDetranVehicleResponse>(`${environment.apiUrl}`, detranRequest);
+    return this.http.post<IDetranVehicleResponse>(`${environment.apiUrl}/detranVehicle`, detranRequest);
   }
 
   getTimelineData(detranRequest: IDetranTimeLineRequest): Observable<IDetranTimeLineResponse> {
-    return this.http.post<IDetranTimeLineResponse>(`${environment.apiUrl}`, detranRequest);
+    return this.http.post<IDetranTimeLineResponse>(`${environment.apiUrl}/detranTimeLine`, detranRequest);
   }
 
 }
