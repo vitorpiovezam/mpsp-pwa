@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-searches.component.scss']
 })
 export class MySearchesComponent implements OnInit {
-  reports: any;
+  reports = [];
   isLoading = true;
 
   constructor(private reportService: ReportService) { }
