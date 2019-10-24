@@ -42,6 +42,20 @@ import { ArpenpService } from './core/services/arpenp.service';
 import { MatOptionModule, MatNativeDateModule } from '@angular/material/core';
 import { LoginComponent } from './pages/login/login.component';
 import { CagedCompanyFormComponent } from './core/forms/caged-company-form/caged-company-form.component';
+import { ArispResultComponent } from './shared/components/arisp-result/arisp-result.component';
+import { ArpenpResultComponent } from './shared/components/arpenp-result/arpenp-result.component';
+import { CadespResultComponent } from './shared/components/cadesp-result/cadesp-result.component';
+import { CagedCompanyResultComponent } from './shared/components/caged-company-result/caged-company-result.component';
+import { CagedResponsibleResultComponent } from './shared/components/caged-responsible-result/caged-responsible-result.component';
+import { CagedWorkerResultComponent } from './shared/components/caged-worker-result/caged-worker-result.component';
+import { CensecResultComponent } from './shared/components/censec-result/censec-result.component';
+import { DetranCnhResultComponent } from './shared/components/detran-cnh-result/detran-cnh-result.component';
+import { DetranTimelineResultComponent } from './shared/components/detran-timeline-result/detran-timeline-result.component';
+import { DetranVehicleResultComponent } from './shared/components/detran-vehicle-result/detran-vehicle-result.component';
+import { InfocrimResultComponent } from './shared/components/infocrim-result/infocrim-result.component';
+import { JucespResultComponent } from './shared/components/jucesp-result/jucesp-result.component';
+import { SitelResultComponent } from './shared/components/sitel-result/sitel-result.component';
+import { SivecResultComponent } from './shared/components/sivec-result/sivec-result.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +77,21 @@ import { CagedCompanyFormComponent } from './core/forms/caged-company-form/caged
     SitelFormComponent,
     SivecFormComponent,
     LoginComponent,
+    
+    ArispResultComponent,
+    ArpenpResultComponent,
+    CensecResultComponent,
+    CadespResultComponent,
+    CagedCompanyResultComponent,
+    CagedResponsibleResultComponent,
+    CagedWorkerResultComponent,
+    DetranCnhResultComponent,
+    DetranTimelineResultComponent,
+    DetranVehicleResultComponent,
+    InfocrimResultComponent,
+    JucespResultComponent,
+    SitelResultComponent,
+    SivecResultComponent
   ],
   imports: [
     BrowserModule,

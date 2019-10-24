@@ -15,7 +15,7 @@ export class MySearchesComponent implements OnInit {
   ngOnInit() {
     this.reportService.getReports().subscribe(x => {
       this.isLoading = false;
-      this.reports = x
+      this.reports = Object.entries(x)
     });
   }
 

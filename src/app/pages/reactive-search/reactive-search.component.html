@@ -121,7 +121,7 @@
               <mat-spinner  class="progressSpinner">
               </mat-spinner>
             </div>
-            {{ arispResponse | json }}
+            <app-arisp-result [response]="arispResponse"></app-arisp-result>
           </div> 
           <div class="response" *ngIf="arpenp">
             <h3>arpenp</h3>
