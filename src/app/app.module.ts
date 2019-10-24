@@ -67,7 +67,6 @@ import { CagedCompanyFormComponent } from './core/forms/caged-company-form/caged
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,

@@ -38,20 +38,20 @@ export class ReactiveSearchComponent implements OnInit {
   form: FormGroup;
   isValid: boolean = false;
 
-  arisp = true;
-  arpenp = true;
-  cadesp = false; // crash
-  cagedCompany = true; 
-  cagedResponsible = true;
-  cagedWorker = true;
-  censec = true;
+  arisp = false;
+  arpenp = false;
+  cadesp = false;
+  cagedCompany = false; 
+  cagedResponsible = false;
+  cagedWorker = false;
+  censec = false;
   detranCnh = false; // crash
-  detranTimeLine = true;
-  detranVehicle = false; // crash
-  infocrim = false; // wkhtmltopdf crash
-  jucesp = true;
-  sitel = true;
-  sivec = true;
+  detranTimeLine = false;
+  detranVehicle = false;
+  infocrim = true; // wkhtmltopdf crash
+  jucesp = false;
+  sitel = false;
+  sivec = false;
 
   arispLoading = false;
   arpenpLoading = false;
