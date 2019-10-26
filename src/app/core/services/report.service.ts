@@ -10,7 +10,7 @@ export class ReportService {
   constructor(private http: HttpClient){ }
 
   getReports(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/reports`);
+    return this.http.get(`${environment.apiUrl}/reports`)
   }
 
 }

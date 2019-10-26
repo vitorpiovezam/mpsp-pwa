@@ -11,8 +11,10 @@ export class ArpenpService implements BaseResourceService  {
   constructor(private http: HttpClient){ 
   }
 
-  getFormData(arpenpRequest: IArpenpRequest): Observable<IArpenpResponse> {
-    return this.http.post<IArpenpResponse>(`${environment.apiUrl}/arpensp`, arpenpRequest);
+  getFormData(arpenpRequest: IArpenpRequest, reportId: string): Observable<IArpenpResponse> {
+    return this.http.post<IArpenpResponse>(`${environment.apiUrl}/arpensp`, arpenpRequest, {
+      headers: { 'reportId': reportId }
+    });
   }
 
 }

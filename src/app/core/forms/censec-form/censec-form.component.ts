@@ -29,10 +29,4 @@ export class CensecFormComponent implements OnInit {
     this.formReady.emit(this.form);
   }
 
-  search(censecRequest: ICensecRequest) {
-    this.censecService.getFormData(censecRequest).subscribe(
-      res => console.log(res)
-    )
-  }
-
 }

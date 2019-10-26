@@ -6,12 +6,14 @@ import { IArispResponse, IArispRequest } from '../forms/arisp-form/arisp.model';
 import { BaseResourceService } from './base-resource.service';
 
 @Injectable()
-export class ArispService {
+export class ArispService implements BaseResourceService {
 
   constructor(private http: HttpClient){ }
 
-  getFormData(arispRequest: IArispRequest): Observable<IArispResponse> {
-    return this.http.post<IArispResponse>(`${environment.apiUrl}/arisp`, arispRequest);
+  getFormData(arispRequest: IArispRequest ,reportId: string): Observable<IArispResponse> {
+    return this.http.post<IArispResponse>(`${environment.apiUrl}/arisp`, arispRequest, {
+      headers: { 'reportId': reportId }
+    });
   }
 
 }

@@ -14,16 +14,22 @@ export class DetranService implements BaseResourceService {
 
   getFormData(foo: any) { }
 
-  getCnhData(detranRequest: IDetranCNHRequest): Observable<IDetranCNHResponse> {
-    return this.http.post<IDetranCNHResponse>(`${environment.apiUrl}/detranCNH`, detranRequest);
+  getCnhData(detranRequest: IDetranCNHRequest, reportId: string): Observable<IDetranCNHResponse> {
+    return this.http.post<IDetranCNHResponse>(`${environment.apiUrl}/detranCNH`, detranRequest, {
+      headers: { 'reportId': reportId }
+    });
   }
 
-  getVehicleData(detranRequest: IDetranVehicleRequest): Observable<IDetranVehicleResponse> {
-    return this.http.post<IDetranVehicleResponse>(`${environment.apiUrl}/detranVehicle`, detranRequest);
+  getVehicleData(detranRequest: IDetranVehicleRequest, reportId: string): Observable<IDetranVehicleResponse> {
+    return this.http.post<IDetranVehicleResponse>(`${environment.apiUrl}/detranVehicle`, detranRequest, {
+      headers: { 'reportId': reportId }
+    });
   }
 
-  getTimelineData(detranRequest: IDetranTimeLineRequest): Observable<IDetranTimeLineResponse> {
-    return this.http.post<IDetranTimeLineResponse>(`${environment.apiUrl}/detranTimeLine`, detranRequest);
+  getTimelineData(detranRequest: IDetranTimeLineRequest, reportId: string): Observable<IDetranTimeLineResponse> {
+    return this.http.post<IDetranTimeLineResponse>(`${environment.apiUrl}/detranTimeLine`, detranRequest, {
+      headers: { 'reportId': reportId }
+    });
   }
 
 }

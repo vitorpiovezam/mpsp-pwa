@@ -1,7 +1,17 @@
 <h4>{{ title }}</h4>
 
  <form [formGroup]="form" (ngSubmit)="search(form.value)">
+
+    <mat-form-field class="block">
+        <mat-label>Tipo de Pesquisa</mat-label>
+        <mat-select formControlName="searchType">
+          <mat-option *ngFor="let search of searchType; let i = index" [value]="(i+1).toString()">
+            {{ search }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
     <mat-form-field class="block" class="example-full-width">
-      <input matInput placeholder="Nome*" formControlName="name">
+      <input matInput placeholder="Nome*" formControlName="term">
     </mat-form-field>
 </form>

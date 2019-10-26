@@ -10,8 +10,10 @@ export class SivecService implements BaseResourceService{
 
   constructor(private http: HttpClient){ }
 
-  getFormData(sivecRequest: ISivecRequest): Observable<ISivecResponse> {
-    return this.http.post<ISivecResponse>(`${environment.apiUrl}/sivec`, sivecRequest);
+  getFormData(sivecRequest: ISivecRequest, reportId: string): Observable<ISivecResponse> {
+    return this.http.post<ISivecResponse>(`${environment.apiUrl}/sivec`, sivecRequest, {
+      headers: { 'reportId': reportId }
+    });
   }
 
 }

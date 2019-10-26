@@ -1,20 +1,27 @@
-<div class="content">
-  <div *ngIf="isLoading">
-    <mat-spinner
-      [mode]="indeterminate">
-    </mat-spinner>
-  </div>
-  <div class="row" *ngIf="!isLoading">
+<div *ngIf="isLoading" class="content">
+  <mat-spinner></mat-spinner>
+</div>
 
-    <div *ngIf="reports.lenght === 0"> 
-      <h2>Você não tem relatórios gerados :(</h2>
-      <button mat-button color="primary" [routerLink]="[ '/search' ]">Realizar consultas</button>
-    </div>
-
-    <div *ngFor="let report of reports">
-      <p>{{ report | json}}</p>
-    </div>
-  
-  
+<div class="container" *ngIf="!isLoading">
+  <div *ngIf="reports.length === 0">
+    <h2>Você não tem relatórios gerados :(</h2>
+    <button mat-button color="primary" [routerLink]="[ '/search' ]">Realizar consultas</button>
   </div>
+
+  <div *ngFor="let report of reports">
+      <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              #{{ report.reportId | json }}
+            </mat-panel-title>
+            <mat-panel-description>
+                
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        
+        </mat-expansion-panel>
+        <br>
+  </div>
+
+
 </div>

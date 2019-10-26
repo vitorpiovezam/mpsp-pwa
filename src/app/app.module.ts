@@ -30,7 +30,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ReactiveSearchComponent } from './pages/reactive-search/reactive-search.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatSelectModule, MatCardModule, MatDatepickerModule } from '@angular/material';
+import { MatSelectModule, MatCardModule, MatDatepickerModule, MatFormFieldModule, MatExpansionModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
 import { ArispFormComponent } from './core/forms/arisp-form/arisp-form.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -39,7 +39,7 @@ import { MySearchesComponent } from './pages/my-searches/my-searches.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArpenpFormComponent } from './core/forms/arpenp-form/arpenp-form.component';
 import { ArpenpService } from './core/services/arpenp.service';
-import { MatOptionModule, MatNativeDateModule } from '@angular/material/core';
+import { MatOptionModule, MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { LoginComponent } from './pages/login/login.component';
 import { CagedCompanyFormComponent } from './core/forms/caged-company-form/caged-company-form.component';
 import { ArispResultComponent } from './shared/components/arisp-result/arisp-result.component';
@@ -96,7 +96,6 @@ import { SivecResultComponent } from './shared/components/sivec-result/sivec-res
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
@@ -114,7 +113,12 @@ import { SivecResultComponent } from './shared/components/sivec-result/sivec-res
     MatSelectModule,
     MatCardModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule,
+    MatExpansionModule
   ],
   providers: [
     ArispService,

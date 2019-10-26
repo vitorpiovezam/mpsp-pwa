@@ -10,9 +10,10 @@ import { BaseResourceService } from './base-resource.service';
 export class InfocrimService implements BaseResourceService {
   constructor(private http: HttpClient){ }
 
-  getFormData(infocrimRequest: IInfocrimRequest): Observable<IInfocrimResponse> {
-    console.log(infocrimRequest)
-    return this.http.post<IInfocrimResponse>(`${environment.apiUrl}/infocrim`, infocrimRequest);
+  getFormData(infocrimRequest: IInfocrimRequest, reportId: string): Observable<IInfocrimResponse> {
+    return this.http.post<IInfocrimResponse>(`${environment.apiUrl}/infocrim`, {
+      headers: { 'reportId': reportId }
+    });
   }
 
 }

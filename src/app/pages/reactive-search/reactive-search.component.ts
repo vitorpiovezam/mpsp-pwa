@@ -38,17 +38,17 @@ export class ReactiveSearchComponent implements OnInit {
   form: FormGroup;
   isValid: boolean = false;
 
-  arisp = true;
+  arisp = false;
   arpenp = false;
-  cadesp = false; // crash
+  cadesp = true;
   cagedCompany = false; 
   cagedResponsible = false;
   cagedWorker = false;
   censec = false;
-  detranCnh = false; // crash
+  detranCnh = false;
   detranTimeLine = false;
-  detranVehicle = false; // crash
-  infocrim = false; // wkhtmltopdf crash
+  detranVehicle = false;
+  infocrim = false; 
   jucesp = false;
   sitel = false;
   sivec = false;
@@ -152,14 +152,14 @@ export class ReactiveSearchComponent implements OnInit {
       );
   }
 
-  search(entries: {}) {
+  search(entries: {}, relatoryId = (Math.random()*10000).toString()) {
     const formValues = Object.entries(this.form.value);
 
     for (const [i, form] of formValues.entries()){
       if (form[0] === 'arisp') {
         const arispRequest = form[1] as IArispRequest; 
         this.arispLoading = true;
-        this.arispService.getFormData(arispRequest).subscribe(x => {
+        this.arispService.getFormData(arispRequest, relatoryId).subscribe(x => {
           this.arispLoading = false
           this.arispResponse = x
         });
@@ -168,7 +168,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'arpenp') {
         const arpenpRequest = form[1] as IArpenpRequest; 
         this.arpenpLoading = true;
-        this.arpenpService.getFormData(arpenpRequest).subscribe(x => {
+        this.arpenpService.getFormData(arpenpRequest, relatoryId).subscribe(x => {
           this.arpenpLoading = false
           this.arpenpResponse = x
         })
@@ -177,7 +177,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'cadesp') {
         const cadespRequest = form[1] as ICadespRequest; 
         this.cadespLoading = true;
-        this.cadespService.getFormData(cadespRequest).subscribe(x => {
+        this.cadespService.getFormData(cadespRequest, relatoryId).subscribe(x => {
           this.cadespLoading = false
           this.cadespResponse = x
         })
@@ -186,7 +186,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'cagedWorker') {
         const cagedWorkerRequest = form[1] as ICagedWorkerRequest; 
         this.cagedWorkerLoading = true;
-        this.cagedService.getWorkerData(cagedWorkerRequest).subscribe(x => {
+        this.cagedService.getWorkerData(cagedWorkerRequest, relatoryId).subscribe(x => {
           this.cagedWorkerLoading = false
           this.cagedWorkerResponse = x
         })
@@ -195,7 +195,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'cagedResponsible') {
         const cagedRequest = form[1] as ICagedResponsibleRequest; 
         this.cagedResponsibleLoading = true;
-        this.cagedService.getResponsibleData(cagedRequest).subscribe(x => {
+        this.cagedService.getResponsibleData(cagedRequest, relatoryId).subscribe(x => {
           this.cagedResponsibleLoading = false
           this.cagedResponsibleResponse = x
         })
@@ -204,7 +204,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'cagedCompany') {
         const cagedRequest = form[1] as ICagedCompanyRequest;
         this.cagedCompanyLoading = true;
-        this.cagedService.getCompanyData(cagedRequest).subscribe(x => {
+        this.cagedService.getCompanyData(cagedRequest, relatoryId).subscribe(x => {
           this.cagedCompanyLoading = false
           this.cagedCompanyResponse = x
         })
@@ -213,7 +213,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'censec') {
         const censecRequest = form[1] as ICensecRequest; 
         this.censecLoading = true;
-        this.censecService.getFormData(censecRequest).subscribe(x => {
+        this.censecService.getFormData(censecRequest, relatoryId).subscribe(x => {
           this.censecLoading = false
           this.censecResponse = x
         })
@@ -222,7 +222,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'detranCnh') {
         const detranCnhRequest = form[1] as IDetranCNHRequest; 
         this.detranCnhLoading = true;
-        this.detranService.getCnhData(detranCnhRequest).subscribe(x => {
+        this.detranService.getCnhData(detranCnhRequest, relatoryId).subscribe(x => {
           this.detranCnhLoading = false
           this.detranCNHResponse = x
         })
@@ -231,7 +231,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'detranTimeline') {
         const detranTimeLineRequest = form[1] as IDetranTimeLineRequest; 
         this.detranTimeLineLoading = true;
-        this.detranService.getTimelineData(detranTimeLineRequest).subscribe(x => {
+        this.detranService.getTimelineData(detranTimeLineRequest, relatoryId).subscribe(x => {
           this.detranTimeLineLoading = false
           this.detranTimeLineResponse = x
         })
@@ -240,7 +240,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'detranVehicle') {
         const detranVehicleRequest = form[1] as IDetranVehicleRequest;
         this.detranVehicleLoading = true;
-        this.detranService.getVehicleData(detranVehicleRequest).subscribe(x => {
+        this.detranService.getVehicleData(detranVehicleRequest, relatoryId).subscribe(x => {
           this.detranVehicleLoading = false
           this.detranVehicleResponse = x
         })
@@ -249,7 +249,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'infocrim') {
         const infocrimRequest = form[1] as IInfocrimRequest; 
         this.infocrimLoading = true;
-        this.infocrimService.getFormData(infocrimRequest).subscribe(x => {
+        this.infocrimService.getFormData(infocrimRequest, relatoryId).subscribe(x => {
           this.infocrimLoading = false;
           this.infocrimResponse = x
         })
@@ -258,7 +258,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'jucesp') {
         const jucespRequest = form[1] as IJucespRequest; 
         this.jucespLoading = true;
-        this.jucespService.getFormData(jucespRequest).subscribe(x => {
+        this.jucespService.getFormData(jucespRequest, relatoryId).subscribe(x => {
           this.jucespLoading = false
           this.jucespResponse = x
         })
@@ -267,7 +267,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'sitel') {
         const sitelRequest = form[1] as ISitelRequest; 
         this.sitelLoading = true;
-        this.sitelService.getFormData(sitelRequest).subscribe(x => {
+        this.sitelService.getFormData(sitelRequest, relatoryId).subscribe(x => {
           this.sitelLoading = false
           this.sitelResponse = x
         })
@@ -276,7 +276,7 @@ export class ReactiveSearchComponent implements OnInit {
       if (form[0] === 'sivec') {
         const sivecRequest = form[1] as ISivecRequest; 
         this.sivecLoading = true;
-        this.sivecService.getFormData(sivecRequest).subscribe(x => {
+        this.sivecService.getFormData(sivecRequest, relatoryId).subscribe(x => {
           this.sivecLoading = false
           this.sivecResponse = x
         })

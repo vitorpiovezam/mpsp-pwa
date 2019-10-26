@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-searches.component.scss']
 })
 export class MySearchesComponent implements OnInit {
-  reports: any;
+  reports = [] as any[];
   isLoading = true;
 
   constructor(private reportService: ReportService) { }
@@ -15,7 +15,7 @@ export class MySearchesComponent implements OnInit {
   ngOnInit() {
     this.reportService.getReports().subscribe(x => {
       this.isLoading = false;
-      this.reports = Object.entries(x)
+      this.reports = x
     });
   }
 

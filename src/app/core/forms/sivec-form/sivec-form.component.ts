@@ -13,6 +13,11 @@ export class SivecFormComponent implements OnInit {
   @Output() formReady = new EventEmitter<FormGroup>();
   title: string;
   form: FormGroup;
+  searchType = [
+    'RG',
+    'Nome',
+    'Matricula SAP'
+  ]
 
   constructor(
     private sivecService: SivecService,
@@ -22,17 +27,12 @@ export class SivecFormComponent implements OnInit {
   ngOnInit() {
     this.title = 'Sivec';
     this.form = this.formBuilder.group({
-      name: new FormControl('', [Validators.required]),
+      searchType: new FormControl(null, Validators.required),
+      term: new FormControl('', [Validators.required]),
     });
 
     // Emit the form group to the father to do whatever it wishes
     this.formReady.emit(this.form);
-  }
-
-  search(sivecRequest: ISivecRequest) {
-    this.sivecService.getFormData(sivecRequest).subscribe(
-      res => console.log(res)
-    )
   }
 
 }

@@ -1,1 +1,21 @@
-<p>arpenp-result works!</p>
+<div *ngIf="response?.spouse1OldName" class="content">
+  <div *ngIf="response?.spouse1OldName">
+    <strong>Nome do conjugue 1 (antigo) :</strong> {{ response?.spouse1OldName }}
+  </div>
+
+  <div *ngIf="response?.spouse1NewName">
+    <strong>Nome do conjugue 1 (novo) :</strong> {{ response?.spouse1NewName }}
+  </div>
+
+  <div *ngIf="response?.spouse2OldName">
+    <strong>Nome do conjugue 2 (antigo) :</strong> {{ response?.spouse2OldName }}
+  </div>
+
+  <div *ngIf="response?.spouse2NewName">
+    <strong>Nome do conjugue 2 (novo) :</strong> {{ response?.spouse2NewName }}
+  </div>
+
+  <div *ngIf="response?.marriageDate">
+    <strong>Data do casamento :</strong> {{ response?.marriageDate }}
+  </div>
+</div>
