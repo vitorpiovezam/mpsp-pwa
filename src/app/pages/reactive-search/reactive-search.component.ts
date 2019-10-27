@@ -39,7 +39,7 @@ export class ReactiveSearchComponent implements OnInit {
   isValid: boolean = false;
 
   arisp = false;
-  arpenp = false;
+  arpenp = falzse;
   cadesp = false;
   cagedCompany = false; 
   cagedResponsible = false;

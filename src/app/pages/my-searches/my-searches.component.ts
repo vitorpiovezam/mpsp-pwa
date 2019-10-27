@@ -20,8 +20,7 @@ export class MySearchesComponent implements OnInit {
   }
 
   getPortalNames(report: {}) {
-    console.log(report);
-    return "salve";
+    return Object.entries(report).map(x => x[0]).toString();
   }
 
 }

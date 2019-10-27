@@ -56,6 +56,7 @@ import { InfocrimResultComponent } from './shared/components/infocrim-result/inf
 import { JucespResultComponent } from './shared/components/jucesp-result/jucesp-result.component';
 import { SitelResultComponent } from './shared/components/sitel-result/sitel-result.component';
 import { SivecResultComponent } from './shared/components/sivec-result/sivec-result.component';
+import { ReportComponent } from './shared/components/report/report.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,7 +92,8 @@ import { SivecResultComponent } from './shared/components/sivec-result/sivec-res
     InfocrimResultComponent,
     JucespResultComponent,
     SitelResultComponent,
-    SivecResultComponent
+    SivecResultComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
