@@ -43,9 +43,9 @@ export class ReactiveSearchComponent implements OnInit {
   cadesp = false;
   cagedCompany = false; 
   cagedResponsible = false;
-  cagedWorker = true;
+  cagedWorker = false;
   censec = false;
-  detranCnh = false;
+  detranCnh = true;
   detranTimeLine = false;
   detranVehicle = false;
   infocrim = false; 

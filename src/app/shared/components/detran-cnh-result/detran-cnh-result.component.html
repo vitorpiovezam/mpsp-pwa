@@ -1,1 +1,41 @@
-<p>detran-cnh-result works!</p>
+<div *ngIf="response" class="content">
+  <div *ngIf="response?.renach">
+    <strong>RENACH :</strong> {{ response?.renach }}
+  </div>
+
+  <div *ngIf="response?.category">
+    <strong>Categoria: </strong> {{ response?.category }}
+  </div>
+
+  <div *ngIf="response?.emission">
+    <strong>Emissão :</strong> {{ response?.emission }}
+  </div>
+
+  <div *ngIf="response?.birthDate">
+    <strong>Data de nascimento :</strong> {{ response?.birthDate }}
+  </div>
+
+  <div *ngIf="response?.conductionName">
+    <strong>Nome do condutor :</strong> {{ response?.conductionName }}
+  </div>
+
+  <div *ngIf="response?.registerDate">
+    <strong>Data de Registro :</strong> {{ response?.registerDate }}
+  </div>
+
+  <div *ngIf="response?.typographic">
+    <strong>Tipografia :</strong> {{ response?.typographic }}
+  </div>
+
+  <div *ngIf="response?.identification">
+    <strong>Identificação :</strong> {{ response?.identification }}
+  </div>
+
+  <div *ngIf="response?.cpf">
+    <strong>CPF :</strong> {{ response?.cpf }}
+  </div>
+
+  <div *ngIf="response?.marriageDate">
+    <a href="{{ response.imagePath}}" target="_blank">Ver imagem</a>
+  </div>
+</div>

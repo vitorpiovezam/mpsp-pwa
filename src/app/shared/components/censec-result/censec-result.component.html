@@ -1,1 +1,61 @@
-<p>censec-result works!</p>
+<div *ngIf="response" class="content">
+  <div *ngIf="response?.office">
+    <strong>Escritório :</strong> {{ response?.office }}
+  </div>
+
+  <div *ngIf="response?.date">
+    <strong>Data :</strong> {{ response?.date }}
+  </div>
+
+  <div *ngIf="response?.act">
+    <strong>Ato : </strong> {{ response?.act }}
+  </div>
+
+  <div *ngIf="response?.actDate">
+    <strong>Data do Ato: </strong> {{ response?.actDate }}
+  </div>
+
+  <div *ngIf="response?.ctpsSerie">
+    <strong>Série da CTPS :</strong> {{ response?.ctpsSerie }}
+  </div>
+
+  <div *ngIf="response?.book">
+    <strong>Livro :</strong> {{ response?.book }}
+  </div>
+
+  <div *ngIf="response?.bookComplement">
+    <strong>Complementos do Livro :</strong> {{ response?.bookComplement }}
+  </div>
+
+  <div *ngIf="response?.page">
+    <strong>Página</strong> {{ response?.page }}
+  </div>
+
+  <div *ngIf="response?.pageComplement">
+    <strong>Complemento da Página :</strong> {{ response?.pageComplement }}
+  </div>
+
+  <h4>Partes :</h4>
+
+  <div *ngFor="let part of response?.parts; let i = index">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Parte #{{ i + i }}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ part.name }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div *ngIf="part?.document">
+        <strong>Documento :</strong> {{ part?.document }}
+      </div>
+
+      <div *ngIf="part?.role">
+        <strong>Qualidade :</strong> {{ part?.role }}
+      </div>
+
+    </mat-expansion-panel><br>
+  </div>
+</div>

@@ -168,7 +168,7 @@
               <mat-spinner diameter="50">
               </mat-spinner>
             </div>
-            {{ censecResponse | json }}
+            <app-censec-result [response]="censecResponse"></app-censec-result>
           </div> 
           <div class="response" *ngIf="detranCnh">
             <h3>detranCnh</h3>
@@ -176,7 +176,7 @@
               <mat-spinner diameter="50">
               </mat-spinner>
             </div>
-            {{ detranCnhResponse | json }}
+            <app-detran-cnh-result [response]="detranCNHResponse"></app-detran-cnh-result>
           </div> 
           <div class="response" *ngIf="detranTimeLine">
             <h3>detranTimeLine</h3>

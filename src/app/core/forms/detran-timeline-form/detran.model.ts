@@ -12,7 +12,7 @@ export interface IDetranCNHResponse {
   fatherName?: String
   motherName?: String
   registerDate?: String
-  typeGraph?: String
+  typographic?: String
   identification?: String
   cpf?: String
 }
