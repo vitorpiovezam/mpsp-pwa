@@ -184,7 +184,7 @@
               <mat-spinner diameter="50">
               </mat-spinner>
             </div>
-            {{ detranTimeLineResponse | json }}
+            <app-detran-timeline-result [response]="detranTimeLineResponse"></app-detran-timeline-result>
           </div> 
           <div class="response" *ngIf="detranVehicle">
             <h3>detranVehicle</h3>

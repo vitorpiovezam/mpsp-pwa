@@ -1,14 +1,85 @@
 <div *ngIf="response" class="content">
   <div *ngIf="response?.identification">
-    <strong>Identificação : </strong> {{ response?.identification }}
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Indentificação
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div *ngIf="response?.identification.cnpjCeiCpf">
+        <strong>CNPJ/CEI/ :</strong> {{ response?.identification.cnpjCeiCpf }}
+      </div>
+
+      <div *ngIf="response?.identification.name">
+        <strong>Nome :</strong> {{ response?.identification.name }}
+      </div>
+    </mat-expansion-panel>
+    <br>
   </div>
 
   <div *ngIf="response?.address">
-    <strong>Endereço :</strong> {{ response?.address }}
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Endereço
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div *ngIf="response?.address.street">
+        <strong>Rua :</strong> {{ response?.address.street }}
+      </div>
+
+      <div *ngIf="response?.address.neighborhood">
+        <strong>Bairro :</strong> {{ response?.address.neighborhood }}
+      </div>
+
+      <div *ngIf="response?.address.city">
+        <strong>Cidade :</strong> {{ response?.address.city }}
+      </div>
+
+      <div *ngIf="response?.address.state">
+        <strong>Estado :</strong> {{ response?.address.state }}
+      </div>
+
+      <div *ngIf="response?.address.cep">
+        <strong>CEP :</strong> {{ response?.address.cep }}
+      </div>
+
+    </mat-expansion-panel>
+    <br>
   </div>
 
   <div *ngIf="response?.contact">
-    <strong>Contato :</strong> {{ response?.contact }}
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Contato
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div *ngIf="response?.contact.name">
+        <strong>Nome :</strong> {{ response?.contact.name }}
+      </div>
+
+      <div *ngIf="response?.contact.cpf">
+        <strong>CPF :</strong> {{ response?.contact.cpf }}
+      </div>
+
+      <div *ngIf="response?.contact.phone">
+        <strong>Telefone :</strong> {{ response?.contact.phone }}
+      </div>
+
+      <div *ngIf="response?.contact.line">
+        <strong>Linha :</strong> {{ response?.contact.line }}
+      </div>
+
+      <div *ngIf="response?.contact.email">
+        <strong>Email :</strong> {{ response?.contact.email }}
+      </div>
+
+    </mat-expansion-panel>
+    <br>
   </div>
 
 </div>
