@@ -200,7 +200,7 @@
               <mat-spinner diameter="50">
               </mat-spinner>
             </div>
-            {{ infocrimResponse | json }}
+            <app-infocrim-result [response]="infocrimResponse"></app-infocrim-result>
           </div> 
           <div class="response" *ngIf="jucesp">
             <h3>jucesp</h3>
@@ -208,7 +208,7 @@
               <mat-spinner diameter="50">
               </mat-spinner>
             </div>
-            {{ jucespResponse | json }}
+            <app-jucesp-result [response]="jucespResponse"></app-jucesp-result>
           </div> 
           <div class="response" *ngIf="sitel">
             <h3>sitel</h3>
@@ -216,7 +216,7 @@
               <mat-spinner diameter="50">
               </mat-spinner>
             </div>
-            {{ sitelResponse | json }}
+            <app-sitel-result [response]="sitelResponse"></app-sitel-result>
           </div> 
           <div class="response" *ngIf="sivec">
             <h3>sivec</h3>
@@ -224,7 +224,7 @@
               <mat-spinner diameter="50">
               </mat-spinner>
             </div>
-            {{ sivecResponse | json }}
+            <app-sivec-result [response]="sivecResponse"></app-sivec-result>
           </div> 
         </div>
       </div>

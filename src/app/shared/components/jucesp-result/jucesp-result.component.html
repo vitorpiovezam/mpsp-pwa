@@ -1,1 +1,53 @@
-<p>jucesp-result works!</p>
+<div *ngIf="response" class="content">
+  <div *ngIf="response?.companyType">
+    <strong>Escritório :</strong> {{ response?.companyType }}
+  </div>
+
+  <div *ngIf="response?.date">
+    <strong>Data :</strong> {{ response?.date }}
+  </div>
+
+  <div *ngIf="response?.initDate">
+    <strong>Data de Inicio :</strong> {{ response?.initDate }}
+  </div>
+
+  <div *ngIf="response?.cnpj">
+    <strong>CNPJ :</strong> {{ response?.cnpj }}
+  </div>
+
+  <div *ngIf="response?.companyDescription">
+    <strong>Descrição da empresa :</strong> {{ response?.companyDescription }}
+  </div>
+
+  <div *ngIf="response?.capital">
+    <strong>Capital :</strong> {{ response?.capital }}
+  </div>
+
+  <div *ngIf="response?.address">
+    <strong>Endereço :</strong> {{ response?.address }}
+  </div>
+
+  <div *ngIf="response?.number">
+    <strong>Numero :</strong> {{ response?.number }}
+  </div>
+
+  <div *ngIf="response?.locale">
+    <strong>Localização :</strong> {{ response?.locale }}
+  </div>
+
+  <div *ngIf="response?.complement">
+    <strong>Complemento :</strong> {{ response?.complement }}
+  </div>
+
+  <div *ngIf="response?.postalCode">
+    <strong>CEP :</strong> {{ response?.postalCode }}
+  </div>
+
+  <div *ngIf="response?.city">
+    <strong>Cidade :</strong> {{ response?.city }}
+  </div>
+
+  <div *ngIf="response?.registryFileUrl">
+    <a href="{{ response?.registryFileUrl }}" target="_blank">Visualizar Documento</a>
+  </div>
+</div>

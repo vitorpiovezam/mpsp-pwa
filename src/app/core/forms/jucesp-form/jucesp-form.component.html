@@ -1,6 +1,6 @@
 <h4>{{ title }}</h4>
 
-<form [formGroup]="form" (ngSubmit)="search(form.value)">
+<form [formGroup]="form">
   <mat-form-field class="block" class="example-full-width">
     <input matInput placeholder="Nome da Empresa*" formControlName="companyName">
   </mat-form-field>

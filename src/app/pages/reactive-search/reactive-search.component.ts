@@ -47,11 +47,11 @@ export class ReactiveSearchComponent implements OnInit {
   censec = false;
   detranCnh = false;
   detranTimeLine = false;
-  detranVehicle = true;
-  infocrim = false; 
+  detranVehicle = false;
+  infocrim = false; // endpoint não funcioma
   jucesp = false;
   sitel = false;
-  sivec = false;
+  sivec = true;
 
   arispLoading = false;
   arpenpLoading = false;

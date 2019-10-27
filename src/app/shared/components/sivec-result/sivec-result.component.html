@@ -1,1 +1,84 @@
-<p>sivec-result works!</p>
+<div *ngIf="response">
+  <div *ngIf="response?.name">
+    <strong>Nome :</strong> {{ response?.name }}
+  </div>
+
+  <div *ngIf="response?.sex">
+    <strong>Sexo :</strong> {{ response?.sex }}
+  </div>
+
+  <div *ngIf="response?.birth">
+    <strong>Data de Nascimento :</strong> {{ response?.birth }}
+  </div>
+
+  <div *ngIf="response?.rg">
+    <strong>RG :</strong> {{ response?.rg }}
+  </div>
+
+  <div *ngIf="response?.issueDateDocument">
+    <strong>Data de Emissão :</strong> {{ response?.issueDateDocument }}
+  </div>
+
+  <div *ngIf="response?.nickName">
+    <strong>Apelido :</strong> {{ response?.nickName }}
+  </div>
+
+  <div *ngIf="response?.maritalStatus">
+    <strong>Status :</strong> {{ response?.maritalStatus }}
+  </div>
+
+  <div *ngIf="response?.naturalness">
+    <strong>Natureza :</strong> {{ response?.naturalness }}
+  </div>
+
+  <div *ngIf="response?.naturalized">
+    <strong>Naturalidade :</strong> {{ response?.naturalized }}
+  </div>
+
+  <div *ngIf="response?.study">
+    <strong>Estudo :</strong> {{ response?.study }}
+  </div>
+
+  <div *ngIf="response?.fatherName">
+    <strong>Nome do Pai:</strong> {{ response?.fatherName }}
+  </div>
+
+  <div *ngIf="response?.motherName">
+    <strong>Nome da Mãe :</strong> {{ response?.motherName }}
+  </div>
+
+  <div *ngIf="response?.color">
+    <strong>Cor :</strong> {{ response?.color }}
+  </div>
+
+  <div *ngIf="response?.profession">
+    <strong>Profissão :</strong> {{ response?.profession }}
+  </div>
+
+  <div *ngIf="response?.hair">
+    <strong>Cabelo :</strong> {{ response?.hair }}
+  </div>
+
+  <div *ngIf="response?.eyeColor">
+    <strong>Cor dos Olhos :</strong> {{ response?.eyeColor }}
+  </div>
+  <br>
+  <div *ngIf="response?.address">
+      <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Endereço
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+    
+          <div *ngIf="response.address?.residential">
+            <strong>Residencia :</strong> {{ response.address?.residential }}
+          </div>
+    
+          <div *ngIf="response.address?.city">
+            <strong>Cidade :</strong> {{ response.address?.city }}
+          </div>
+    
+        </mat-expansion-panel><br>
+  </div>
+</div>

@@ -1,1 +1,49 @@
-<p>sitel-result works!</p>
+<div *ngIf="response">
+  <div *ngIf="response?.name">
+    <strong>Nome :</strong> {{ response?.name }}
+  </div>
+
+  <div *ngIf="response?.title">
+    <strong>Titulo :</strong> {{ response?.title }}
+  </div>
+
+  <div *ngIf="response?.birthday">
+    <strong>Data de Nascimanto :</strong> {{ response?.birthday }}
+  </div>
+
+  <div *ngIf="response?.zone">
+    <strong>Zona :</strong> {{ response?.zone }}
+  </div>
+
+  <div *ngIf="response?.address">
+    <strong>Endereço :</strong> {{ response?.address }}
+  </div>
+
+  <div *ngIf="response?.city">
+    <strong>Cidade :</strong> {{ response?.city }}
+  </div>
+
+  <div *ngIf="response?.uf">
+    <strong>UF :</strong> {{ response?.uf }}
+  </div>
+
+  <div *ngIf="response?.domesticDate">
+    <strong>Data :</strong> {{ response?.domesticDate }}
+  </div>
+
+  <div *ngIf="response?.fatherName">
+    <strong>Nome do Pai :</strong> {{ response?.fatherName }}
+  </div>
+
+  <div *ngIf="response?.motherName">
+    <strong>Nome da Mãe :</strong> {{ response?.motherName }}
+  </div>
+
+  <div *ngIf="response?.natural">
+    <strong>Naturalidade :</strong> {{ response?.natural }}
+  </div>
+
+  <div *ngIf="response?.validationCode">
+    <strong>Código de Validação :</strong> {{ response?.validationCode }}
+  </div>
+</div>

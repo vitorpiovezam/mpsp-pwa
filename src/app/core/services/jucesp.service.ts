@@ -10,7 +10,7 @@ export class JucespService implements BaseResourceService {
   constructor(private http: HttpClient){ }
 
   getFormData(jucespRequest: IJucespRequest, reportId: string): Observable<IJucespResponse> {
-    return this.http.post<IJucespResponse>(`${environment.apiUrl}/jucesp`, {
+    return this.http.post<IJucespResponse>(`${environment.apiUrl}/jucesp`, jucespRequest, {
       headers: { 'reportId': reportId }
     });
   }
