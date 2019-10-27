@@ -1,6 +1,26 @@
 <div class="content">
-  {{ response }}
-  <div *ngFor="let resp of response?.registries | async">
-    {{ resp }}
+  <div *ngFor="let resp of response?.registries; let i = index">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Registro #{{ i }}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ resp.office }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+        <div *ngIf="resp?.cityName">
+            <strong>Cidade :</strong> {{ resp?.cityName }}
+          </div>
+
+          <div *ngIf="resp?.registryId">
+            <strong>Matricula :</strong> {{ resp?.registryId }}
+          </div>
+
+          <div *ngIf="resp?.registryFileUrl">
+            <a href="{{ resp.registryFileUrl }}" target="_blank">Visualizar PDF de registro</a>
+          </div>
+    </mat-expansion-panel>
   </div>
 </div>
