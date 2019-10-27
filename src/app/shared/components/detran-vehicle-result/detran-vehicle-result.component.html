@@ -1,1 +1,5 @@
-<p>detran-vehicle-result works!</p>
+<div *ngIf="response" class="content">
+  <div *ngIf="response?.registryFileUrl">
+    <a href="{{ response.registryFileUrl }}" target="_blank">Visualizar registro</a>
+  </div>
+</div>

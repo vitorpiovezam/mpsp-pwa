@@ -192,7 +192,7 @@
               <mat-spinner diameter="50">
               </mat-spinner>
             </div>
-            {{ detranVehicleResponse | json }}
+            <app-detran-vehicle-result [response]="detranVehicleResponse"></app-detran-vehicle-result>
           </div> 
           <div class="response" *ngIf="infocrim">
             <h3>infocrim</h3>
