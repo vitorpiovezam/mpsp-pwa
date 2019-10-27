@@ -15,10 +15,10 @@
               #{{ report.reportId | json }}
             </mat-panel-title>
             <mat-panel-description>
-                
+              {{ getPortalNames(report)}}
             </mat-panel-description>
           </mat-expansion-panel-header>
-        
+          {{report | json }}
         </mat-expansion-panel>
         <br>
   </div>

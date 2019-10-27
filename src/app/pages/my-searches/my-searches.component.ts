@@ -19,4 +19,9 @@ export class MySearchesComponent implements OnInit {
     });
   }
 
+  getPortalNames(report: {}) {
+    console.log(report);
+    return "salve";
+  }
+
 }

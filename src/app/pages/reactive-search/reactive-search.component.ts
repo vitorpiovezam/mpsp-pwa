@@ -26,7 +26,7 @@ import { IDetranTimeLineResponse } from 'src/app/core/forms/detran-timeline-form
 import { ArpenpService } from 'src/app/core/services/arpenp.service';
 import { DetranService } from 'src/app/core/services/detran.service';
 import { SivecService } from 'src/app/core/services/sivec.service';
-
+import * as uuidv4 from 'uuid/v4';
 @Component({
   selector: 'app-reactive-search',
   templateUrl: './reactive-search.component.html',
@@ -51,7 +51,7 @@ export class ReactiveSearchComponent implements OnInit {
   infocrim = false; // endpoint não funcioma
   jucesp = false;
   sitel = false;
-  sivec = true;
+  sivec = false;
 
   arispLoading = false;
   arpenpLoading = false;
@@ -152,9 +152,9 @@ export class ReactiveSearchComponent implements OnInit {
       );
   }
 
-  search(entries: {}, relatoryId = (Math.random()*10000).toString()) {
+  search(entries: {}, relatoryId = uuidv4()) {
     const formValues = Object.entries(this.form.value);
-
+    console.log(relatoryId);
     for (const [i, form] of formValues.entries()){
       if (form[0] === 'arisp') {
         const arispRequest = form[1] as IArispRequest; 
