@@ -1,5 +1,6 @@
 <div class="content">
-  <div *ngFor="let response of response?.registries | async">
-    {{ response }}
+  {{ response }}
+  <div *ngFor="let resp of response?.registries | async">
+    {{ resp }}
   </div>
 </div>

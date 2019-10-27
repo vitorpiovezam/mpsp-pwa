@@ -11,12 +11,12 @@ export class ArispResultComponent implements OnInit {
   @Input()
   response: IArispResponse;
 
-  registries: ArispRegistry[];
+  registries = [] as ArispRegistry[];
 
   constructor() { }
 
   ngOnInit() {
-    this.registries = this.response.registries;
+    this.response.registries = this.registries;
   }
 
 }
