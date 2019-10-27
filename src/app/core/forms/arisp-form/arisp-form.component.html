@@ -1,6 +1,6 @@
 <h4>{{ title }}</h4>
 
-<form [formGroup]="form" (ngSubmit)="search(form.value)">
+<form [formGroup]="form">
   <mat-form-field class="block">
     <mat-label>Tipo de Pesquisa</mat-label>
     <mat-select formControlName="searchType" name="searchType">

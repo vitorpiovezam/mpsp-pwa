@@ -56,7 +56,7 @@ export interface ICagedWorkerResponse {
   birthDate?: String,
   ctpsSerie?: String,
   pisSituation?: String,
-  sex?: String,
+  sex?: String
   nationality?: String,
   color?: String,
   study?: String,

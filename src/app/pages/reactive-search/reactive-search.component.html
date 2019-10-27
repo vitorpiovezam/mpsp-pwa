@@ -136,17 +136,15 @@
               <mat-spinner diameter="50">
               </mat-spinner>
             </div>
-            {{ cadespResponse | json }}
+            <app-cadesp-result [response]="cadespResponse"></app-cadesp-result>
           </div> 
           <div class="response" *ngIf="cagedCompany">
             <h3>cagedCompany</h3>
             <div class="loading" *ngIf="cagedCompanyLoading">
-              <mat-progress-spinner
-        e]="50"
-                >
-              </mat-progress-spinner>
+                <mat-spinner diameter="50">
+                  </mat-spinner>
             </div>
-            {{ cagedCompanyResponse | json }}
+            <app-caged-company-result [response]="cagedCompanyResponse"></app-caged-company-result>
           </div> 
           <div class="response" *ngIf="cagedResponsible">
             <h3>cagedResponsible</h3>
@@ -154,7 +152,7 @@
               <mat-spinner diameter="50">
               </mat-spinner>
             </div>
-            {{ cagedResponsibleResponse | json }}
+            <app-caged-responsible-result [response]="cagedResponsibleResponse"></app-caged-responsible-result>
           </div> 
           <div class="response" *ngIf="cagedWorker">
             <h3>cagedWorker</h3>
@@ -162,7 +160,7 @@
               <mat-spinner diameter="50">
               </mat-spinner>
             </div>
-            {{ cagedWorkerResponse | json }}
+            <app-caged-worker-result [response]="cagedWorkerResponse"></app-caged-worker-result>
           </div> 
           <div class="response" *ngIf="censec">
             <h3>censec</h3>

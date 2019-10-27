@@ -1,1 +1,50 @@
-<p>caged-worker-result works!</p>
+<div *ngIf="response" class="content">
+  <div *ngIf="response?.name">
+    <strong>Nome :</strong> {{ response?.name }}
+  </div>
+
+  <div *ngIf="response?.pis">
+    <strong>PIS :</strong> {{ response?.pis }}
+  </div>
+
+  <div *ngIf="response?.convertedPis">
+    <strong>PIS Convertido :</strong> {{ response?.convertedPis }}
+  </div>
+
+  <div *ngIf="response?.spouse2NewName">
+    <strong>Nome do conjugue 2 (novo) :</strong> {{ response?.spouse2NewName }}
+  </div>
+
+  <div *ngIf="response?.ctpsSerie">
+    <strong>Série da CTPS :</strong> {{ response?.ctpsSerie }}
+  </div>
+
+  <div *ngIf="response?.pisSituation">
+    <strong>Situação do PIS :</strong> {{ response?.pisSituation }}
+  </div>
+
+  <div *ngIf="response?.sex">
+    <strong>Sexo :</strong> {{ response?.sex }}
+  </div>
+
+  <div *ngIf="response?.nationality">
+    <strong>Nacionalidade</strong> {{ response?.nationality }}
+  </div>
+
+  <div *ngIf="response?.color">
+    <strong>Cor :</strong> {{ response?.color }}
+  </div>
+
+  <div *ngIf="response?.study">
+    <strong>Estudo :</strong> {{ response?.study }}
+  </div>
+
+  <div *ngIf="response?.hasDisability">
+    <strong>Possui deficiencia:</strong> {{ response?.hasDisability }}
+  </div>
+
+  <div *ngIf="response?.pdfUrl">
+    <a href="{{ response?.pdfUrl }}" target="_blank">Ver documento</a>
+  </div>
+
+</div>

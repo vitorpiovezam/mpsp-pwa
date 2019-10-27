@@ -1,66 +1,26 @@
-<div *ngIf="response?.ie" class="content">
-    <div *ngIf="response?.ie">
-      <strong>CNPJ: </strong> {{ response?.ie }}
-    </div>
-  
+<div *ngIf="response" class="content">
     <div *ngIf="response?.cnpj">
-      <strong>CNPJ :</strong> {{ response?.cnpj }}
+      <strong>CNPJ: </strong> {{ response?.cnpj }}
     </div>
   
-    <div *ngIf="response?.businessName">
-      <strong>Nome Empresarial :</strong> {{ response?.businessName }}
+    <div *ngIf="response?.name">
+      <strong>Nome :</strong> {{ response?.name }}
     </div>
   
-    <div *ngIf="response?.drt">
-      <strong>DRT :</strong> {{ response?.drt }}
+    <div *ngIf="response?.cnae">
+      <strong>CNAE :</strong> {{ response?.cnae }}
     </div>
   
-    <div *ngIf="response?.situation">
-      <strong>Situação :</strong> {{ response?.situation }}
+    <div *ngIf="response?.subsidiaries">
+      <strong>Subsidiarias :</strong> {{ response?.subsidiaries }}
     </div>
   
-    <div *ngIf="response?.dateStateRegistration">
-      <strong>Data da Inscrição no Estado :</strong> {{ response?.dateStateRegistration }}
+    <div *ngIf="response?.admissions">
+      <strong>Admissões :</strong> {{ response?.admissions }}
     </div>
   
-    <div *ngIf="response?.stateRegime">
-      <strong>Regime estadual</strong> {{ response?.stateRegime }}
-    </div>
-  
-    <div *ngIf="response?.taxOffice">
-      <strong>Posto Fiscal :</strong> {{ response?.taxOffice }}
-    </div>
-  
-    <div *ngIf="response?.fantasyName">
-      <strong>Nome Fantasia :</strong> {{ response?.fantasyName }}
-    </div>
-  
-    <div *ngIf="response?.nire">
-      <strong>NIRE :</strong> {{ response?.nire }}
-    </div>
-  
-    <div *ngIf="response?.registrationSituation">
-      <strong>Situação Cadastral :</strong> {{ response?.registrationSituation }}
-    </div>
-  
-    <div *ngIf="response?.taxOccurrence">
-      <strong>Ocorrência Fiscal :</strong> {{ response?.taxOccurrence }}
-    </div>
-  
-    <div *ngIf="response?.unitType">
-      <strong>Tipo de Unidade :</strong> {{ response?.unitType }}
-    </div>
-  
-    <div *ngIf="response?.ieStartDate">
-      <strong>Data Início da IE :</strong> {{ response?.ieStartDate }}
-    </div>
-  
-    <div *ngIf="response?.dateStartedSituation">
-      <strong>Data Início da Situação :</strong> {{ response?.dateStartedSituation }}
-    </div>
-  
-    <div *ngIf="response?.practices">
-      <strong>Formas de Atuação :</strong> {{ response?.practices }}
+    <div *ngIf="response?.demissions">
+      <strong>Demissões:</strong> {{ response?.demissions }}
     </div>
   
   </div>

@@ -1,1 +1,14 @@
-<p>caged-responsible-result works!</p>
+<div *ngIf="response" class="content">
+  <div *ngIf="response?.identification">
+    <strong>Identificação : </strong> {{ response?.identification }}
+  </div>
+
+  <div *ngIf="response?.address">
+    <strong>Endereço :</strong> {{ response?.address }}
+  </div>
+
+  <div *ngIf="response?.contact">
+    <strong>Contato :</strong> {{ response?.contact }}
+  </div>
+
+</div>

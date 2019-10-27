@@ -38,12 +38,12 @@ export class ReactiveSearchComponent implements OnInit {
   form: FormGroup;
   isValid: boolean = false;
 
-  arisp = true;
+  arisp = false;
   arpenp = false;
   cadesp = false;
   cagedCompany = false; 
   cagedResponsible = false;
-  cagedWorker = false;
+  cagedWorker = true;
   censec = false;
   detranCnh = false;
   detranTimeLine = false;
