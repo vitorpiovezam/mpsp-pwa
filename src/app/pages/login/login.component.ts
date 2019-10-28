@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-login',
   template: `
+  <div class="blink"></div>
   <div class="container">
   <mat-card>
     <mat-card-title>MPSP-PWA</mat-card-title>
@@ -32,6 +33,15 @@ import { Component, OnInit } from '@angular/core';
 `,
   styles: [
     `
+
+  .blink {
+    width:100%;
+    height:100px;
+    position:fixed;
+    top:0;
+    background: white;
+  }
+
   mat-toolbar {
     display: none;
     overflow: hidden;
