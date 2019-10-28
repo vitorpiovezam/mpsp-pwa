@@ -16,6 +16,11 @@ import { Component } from '@angular/core';
   `,
   styles: [
     `
+      .content {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
       .block,mat-form-field {
         display: block !important;
       }

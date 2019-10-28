@@ -1,5 +1,18 @@
 <div class="content">
-  <ng-content>
-
-  </ng-content>
+  <div *ngFor="let report of reportEntries">
+    <app-arisp-result *ngIf="report[0] === 'arisp'" [response]="report[1]"></app-arisp-result>
+    <app-arpenp-result *ngIf="report[0] === 'arpensp'" [response]="report[1]"></app-arpenp-result>
+    <app-cadesp-result *ngIf="report[0] === 'cadesp'" [response]="report[1]"></app-cadesp-result>
+    <app-caged-company-result *ngIf="report[0] === 'cagedCompany'" [response]="report[1]"></app-caged-company-result>
+    <app-caged-responsible-result *ngIf="report[0] === 'cagedResponsible'" [response]="report[1]"></app-caged-responsible-result>
+    <app-caged-worker-result *ngIf="report[0] === 'cagedWorker'" [response]="report[1]"></app-caged-worker-result>
+    <app-censec-result *ngIf="report[0] === 'censec'" [response]="report[1]"></app-censec-result>
+    <app-detran-cnh-result *ngIf="report[0] === 'detranCNH'" [response]="report[1]"></app-detran-cnh-result>
+    <app-detran-timeline-result *ngIf="report[0] === 'detranTimeline'" [response]="report[1]"></app-detran-timeline-result>
+    <app-detran-vehicle-result *ngIf="report[0] === 'detranVehicle'" [response]="report[1]"></app-detran-vehicle-result>
+    <app-infocrim-result *ngIf="report[0] === 'infocrim'" [response]="report[1]"></app-infocrim-result>
+    <app-jucesp-result *ngIf="report[0] === 'jucesp'" [response]="report[1]"></app-jucesp-result>
+    <app-sitel-result *ngIf="report[0] === 'sitel'" [response]="report[1]"></app-sitel-result>
+    <app-sivec-result *ngIf="report[0] === 'sivec'" [response]="report[1]"></app-sivec-result>
+  </div>
 </div>

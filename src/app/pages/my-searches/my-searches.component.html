@@ -18,7 +18,7 @@
               {{ getPortalNames(report)}}
             </mat-panel-description>
           </mat-expansion-panel-header>
-          {{report | json }}
+          <app-report [report]="report"></app-report>
         </mat-expansion-panel>
         <br>
   </div>
