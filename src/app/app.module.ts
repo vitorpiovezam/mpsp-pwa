@@ -57,6 +57,7 @@ import { JucespResultComponent } from './shared/components/jucesp-result/jucesp-
 import { SitelResultComponent } from './shared/components/sitel-result/sitel-result.component';
 import { SivecResultComponent } from './shared/components/sivec-result/sivec-result.component';
 import { ReportComponent } from './shared/components/report/report.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -133,7 +134,7 @@ import { ReportComponent } from './shared/components/report/report.component';
     JucespService,
     SitelService,
     SivecService,
-    ReportService
+    ReportService,
   ],
   bootstrap: [AppComponent]
 })

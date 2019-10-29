@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
@@ -9,12 +9,19 @@ export class ReportComponent implements OnInit {
   @Input()
   report: {};
 
-  reportEntries: {};
+   @Inject(DOCUMENT) private document: Document;
+
+  reportEntries= [] as any[];
   
   constructor() { }
 
   ngOnInit() {
-    this.reportEntries = Object.entries(this.report);
+    this.reportEntries = Array.from(Object.entries(this.report));
+    this.reportEntries.shift();
+  }
+
+  print() {
+    window.print();
   }
 
 }
