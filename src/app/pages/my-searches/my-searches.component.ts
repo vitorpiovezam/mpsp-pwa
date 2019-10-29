@@ -20,7 +20,9 @@ export class MySearchesComponent implements OnInit {
   }
 
   getPortalNames(report: {}) {
-    return Object.entries(report).map(x => x[0]).toString();
+    const names: any = Array.from(Object.entries(report).map(x => x[0]));
+    var theRemovedElement = names.shift();
+    return names.toString();
   }
 
 }
