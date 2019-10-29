@@ -9,5 +9,5 @@ On root folder run <br>
 ```$ npm i```<br>
 ```$ npm run start```
 
-<img src="https://m0.joe.co.uk/wp-content/uploads/2019/01/25121841/zubat-png-8.png" widht="200px">
+<img src="https://m0.joe.co.uk/wp-content/uploads/2019/01/25121841/zubat-png-8.png" width="200px">
 ® *Morcegos*
